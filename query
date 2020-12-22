@@ -1,0 +1,3 @@
+CREATE TABLE `fine_arts`.`admin` ( `id` INT NOT NULL AUTO_INCREMENT , `email` VARCHAR(200) NOT NULL , `password` VARCHAR(200) NOT NULL , `role` INT(100) NOT NULL , `status` INT NOT NULL , `create_date` INT NOT NULL , PRIMARY KEY (`id`));
+ALTER TABLE `admin` CHANGE `role` `role` VARCHAR(100) NOT NULL, CHANGE `status` `status` ENUM('Y','N') NOT NULL DEFAULT 'N';
+CREATE TABLE `fine_arts`.`events` ( `event_id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(200) NOT NULL , `description` TEXT NOT NULL , `create_date` DATETIME NOT NULL , PRIMARY KEY (`event_id`)) ENGINE = InnoDB;

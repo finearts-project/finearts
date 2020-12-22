@@ -8,5 +8,5 @@ $base_url = '';
 
 
 // Encryption Algorithm
-$GLOBALS['secret_key'] = "FineArts";
+$GLOBALS['secret_key'] = "FineArts"; 
 ?>
