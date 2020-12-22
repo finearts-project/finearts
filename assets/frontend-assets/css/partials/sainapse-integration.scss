@@ -1,0 +1,116 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.banner-sainapseIntegration {
+    @include position-relative;
+
+    img {
+        @media (max-width:767px) {
+            height: 390px;
+            object-fit: cover;
+        }
+
+        @media (min-width:992px) and (max-width:1199px) {
+            height: 550px;
+        }
+    }
+
+    .sainapse--bannertext {
+        position: absolute;
+        top: 26%;
+        width: 100%;
+
+        @media (max-width:991px) {
+            top: 10%;
+        }
+
+        h1 {
+            @include banner-title;
+        }
+
+        p {
+            color: $color-white;
+            font-size: 20px;
+            font-weight: 300;
+            margin: 30px 0px;
+            line-height: 30px;
+
+            @media (max-width:767px) {
+                font-size: 16px;
+                line-height: 23px;
+            }
+
+            @media (min-width:768px) and (max-width:991px) {
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+.sainapseIntegration-page {
+    @include custom-main-container;
+
+    .sainapseIntegration-container {
+        @include custom-sub-container;
+        margin: 150px auto 0px;
+        padding: 55px 0px 30px;
+
+        @media (max-width:767px) {
+            margin: 36px auto 0px;
+            padding: 15px 0px 30px;
+        }
+
+        @media (min-width:768px) and (max-width:991px) {
+            margin: 76px auto 0px;
+        }
+
+        @media (min-width:992px) and (max-width:1199px) {
+            margin: 92px auto 0px;
+        }
+
+        h2 {
+            @include bayestree-title;
+            text-align: center;
+        }
+
+        .img--holder {
+            margin-top: 55px;
+
+            @media (max-width:767px) {
+                margin-top: 35px;
+            }
+        }
+    }
+}
+
+.sainapseIntegration--links {
+    font-weight: 300;
+
+    .names {
+        margin-right: 20px;
+        margin-bottom: 10px;
+
+        p {
+            margin: 0;
+            color: #707070;
+        }
+    }
+}
+
+.sainapse--api {
+    text-align: center;
+    margin: 50px 0px 60px;
+
+    p {
+        color: #707070;
+        font-size: 18px;
+        font-weight: 300;
+        margin: 0;
+        sup {
+            font-size: 8px !important;
+            top: -1.2em;
+            font-weight: 400;
+        }
+    }
+}

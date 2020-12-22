@@ -1,0 +1,477 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.banner-appdynamics {
+    position: relative;
+
+    img {
+        width: 100%;
+
+        @media (max-width:767px) {
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+
+    .info--holder {
+        position: absolute;
+        top: 30%;
+
+        @media (max-width:767px) {
+            top: 35px;
+        }
+
+        @media (min-width:576px) and (max-width:767px) {
+            top: 45px;
+        }
+
+        @media (min-width:768px) and (max-width:991px) {
+            top: 55px;
+        }
+
+        h1 {
+            font-size: $fontSize-hero;
+            font-weight: $fontWeight-medium !important;
+            color: $color-white;
+            margin-bottom: 30px;
+
+            @media (max-width:767px) {
+                font-size: 30px;
+            }
+        }
+
+        p {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            width: 44%;
+
+            @media (max-width:767px) {
+                width: 95%;
+                font-size: 16px;
+                line-height: 23px;
+            }
+
+            @media (min-width:768px) and (max-width:991px) {
+                width: 80%;
+            }
+
+        }
+    }
+}
+
+.appdynamics-page {
+    margin-top: -22%;
+    position: relative;
+
+    @media (max-width:991px) {
+        margin-top: -20%;
+    }
+
+    .appdynamics-container {
+        @include bayestreeCustom-container;
+        margin: 195px auto 0px;
+
+        .appd-subcontent {
+            p {
+                color: #000000;
+                font-weight: 300;
+                font-size: 26px;
+                text-align: center;
+                width: 92%;
+                margin: 0 auto 60px;
+                line-height: 38px;
+
+                @media (max-width:767px) {
+                    font-size: 18px;
+                    line-height: 30px;
+                }
+
+                @media (min-width:768px) and (max-width:991px) {
+                    font-size: 21px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+
+    .brandLogos-section {
+        margin-bottom: 48px;
+
+        @media (max-width:767px) {
+            margin-bottom: 30px;
+        }
+
+        .brandLogo-holder {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 13px;
+            text-align: center;
+            padding: 22px;
+            transition: 0.3s ease-in;
+            height: 100%;
+
+            @media (min-width:992px) {
+                height: 116px;
+            }
+
+            &:hover {
+                box-shadow: 0px 4px 36px #00000029;
+                border: $color-white;
+            }
+
+            p {
+                margin: 0;
+                font-weight: 500;
+                font-size: 16px;
+                color: #2A2A2A;
+            }
+
+            .logo-img {
+                height: 70px;
+            }
+        }
+    }
+
+    .about-integration {
+        text-align: left;
+        overflow: hidden;
+        margin-bottom: 50px;
+        padding: 0px 30px;
+        @media (max-width:767px){
+            padding: 0px 0px 10px;
+        }
+        .appD-info {
+            margin-bottom: 40px;
+
+            h2 {
+                @include bayestree-title;
+            }
+
+            p {
+                color: #2A2A2A;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 29px;
+                @media (max-width:767px) {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+                @media (min-width:992px){
+                    width: 90%;
+                }
+            }
+        }
+        .gif-holder {
+            margin-top: -15px;
+        }
+    }
+
+    .downloadLinks {
+        margin-top: 67px;
+
+        @media (max-width:767px) {
+            margin-top: 50px;
+        }
+
+        .learn-more {
+            a {
+                padding: 14px 15px 14px 30px !important;
+                font-weight: 500;
+                font-size: 18px !important;
+                line-height: 23px;
+
+                @media (max-width:767px) {
+                    padding: 14px 15px 14px 18px !important;
+                }
+            }
+
+            span {
+                display: inline-flex;
+                align-items: center;
+
+                @media (min-width:768px) {
+                    margin-left: -15px;
+                }
+
+                img {
+                    width: 40px;
+                }
+            }
+
+            .downloadBtn {
+                &:hover {
+                    i {
+                        transform: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .impact-section {
+        background: #F5F5F5;
+        padding: 60px 0px 52px;
+
+        @media (max-width:767px) {
+            padding: 40px 0px;
+        }
+
+        h3 {
+            @include bayestree-title;
+            margin-bottom: 24px;
+        }
+
+        p {
+            color: #2A2A2A;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .cards--holder {
+            position: relative;
+
+            .card-info {
+                position: absolute;
+                top: 35px;
+                left: 50%;
+                color: white;
+                transform: translateX(-50%);
+                width: 100%;
+
+                h5 {
+                    font-weight: 400;
+                    font-size: 25px;
+                    margin-bottom: 4px;
+                    text-align: center;
+                }
+
+                p {
+                    color: white;
+                    font-weight: 300;
+                    text-align: center;
+                    width: 90%;
+                    margin: 0 auto;
+                    font-size: 20px;
+                    line-height: 25px;
+                    @media (max-width:767px){
+                        line-height: 22px;
+                        font-size: 18px;
+                    }
+                    sup {
+                        font-size: 8px !important;
+                        top: -1em;
+                    }
+                }
+            }
+
+            .btn--holder {
+                position: absolute;
+                bottom: 32px;
+                background: #E9791A;
+                right: 0;
+                left: 0;
+                width: 75%;
+                margin: 0 auto;
+                @media (max-width:575px){
+                    width: 82%;
+                }
+                a {
+                    padding: 14px !important;
+                    color: white !important;
+                    font-weight: 500;
+                    border: none !important;
+                    i {
+                        color: white !important;
+                    }
+
+                    &:hover {
+                        i {
+                            transform: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .connect-section {
+        padding: 60px 30px 38px;
+
+        @media (max-width:767px) {
+            padding: 40px 0px 35px;
+        }
+
+        h4 {
+            @include bayestree-title;
+            margin-bottom: 45px;
+            @media (max-width:767px){
+                margin-bottom: 35px;
+            }
+        }
+
+        .downloadLinks {
+            margin-top: 0;
+        }
+
+        .content--holder {
+            .line {
+                border-top: 5px solid #e9791a;
+                width: 60px;
+                background-color: #e9791a;
+                opacity: 1;
+                margin-bottom: 20px;
+            }
+        }
+
+        p {
+            color: #2A2A2A;
+            font-size: 20px;
+            @media (max-width:767px){
+                font-size: 18px;
+            }
+        }
+    }
+
+    .use-cases {
+        padding-bottom: 50px;
+
+        @media (max-width:767px) {
+            padding-bottom: 25px;
+        }
+
+        h5 {
+            @include bayestree-title;
+        }
+
+        .usecase-info {
+            position: relative;
+
+            .usecase-imgholder {
+                p {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: $color-white;
+                    font-size: 30px;
+                    text-align: center;
+                    margin: 0;
+                    line-height: 32px;
+                }
+
+                background: #101934;
+
+                img {
+                    opacity: 0.8;
+                    transition: 0.3s ease-in;
+                }
+
+                &:hover {
+                    img {
+                        opacity: 0;
+                        transition: 0.3s ease-in;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.downloadBrief-svg {
+    &:hover {
+        fill: #101934;
+    }
+}
+
+
+
+.appD-modal {
+    .modal-dialog {
+       @media (min-width:576px){
+        max-width: 570px;
+       }
+    }
+    .solution--form {
+        border-radius: 19px;
+        background: $color-white;
+        margin-bottom: 0px;
+        h4 {
+            font-size: 26px;
+            margin-bottom: 30px;
+            font-weight: 500;
+            color: #2A2A2A;
+        }
+    
+        .form-group {
+            margin-bottom: 25px;
+            label {
+                margin-bottom: 0;
+                color: #2a2a2ab0;
+    
+            }
+        }
+    
+        .checkbox-input {
+    
+            input,
+            label {
+                cursor: pointer;
+            }
+    
+            label {
+                color: #2a2a2a;
+    
+            }
+        }
+    
+        .terms {
+            color: #969696d9;
+    
+            p {
+                line-height: 20px;
+                font-size: 15px;
+            }
+        }
+    
+        .soln--btn {
+            padding: 12px !important;
+            font-size: 16px !important;
+            background-color: #E9791A !important;
+            border: 1px solid #E9791A !important;
+            color: #fff !important;
+    
+        }
+    
+        input[type=checkbox] {
+            height: 16px;
+            width: 16px;
+            border-radius: 0;
+    
+        }
+    
+        .form-control {
+            border-bottom: 1px solid #2a2a2ab0 !important;
+            color: #000 !important;
+            font-weight: 400 !important;
+            font-size: 16px !important;
+    
+            &:focus {
+                border-bottom: 1px solid black !important;
+            }
+        }
+    
+        .iti {
+            width: 100%;
+        }
+    
+        .iti__selected-flag {
+            padding: 0px 5px;
+            margin-left: -1px;
+        }
+    
+        .phone-field {
+            padding-left: 47px !important;
+        }
+    }
+}

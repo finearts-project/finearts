@@ -1,0 +1,445 @@
+.banner-overview {
+    img {
+      width: 100%;
+      height: auto;
+    }
+}
+.pace-banner .banner-holder {
+    position: absolute;
+    top: 155px;
+}
+.pace-banner .banner-holder .banner-info h1 {
+    h1 {
+        color: #fff;
+        font-weight: 700;
+        width: 60%;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 1200px){
+        width: 50% !important;
+    }
+    @media (max-width: 575px){
+        width: 90% !important;
+    }
+}
+
+  .banner-title.d-flex.align-items-center.sainapse-over {
+      margin-top: 45px;
+  }
+  .pace-banner .banner-holder .banner-info .banner-title p {
+    color: #B4A8A8;
+    font-size: 22px !important;
+    font-weight: 400;
+    margin-bottom: 0px;
+    @media (max-width: 1023px) {
+        font-size: 18px !important;
+    }
+    @media (max-width: 575px){
+        font-size: 16px !important;
+    }
+}
+  .Sainaps-world-architecture {
+      // margin-bottom: 200px;
+      margin-top:-100px;
+      position: relative;
+      text-align: center;
+      .desktop-img {
+          position: absolute;
+          top: -305px;
+          right: 92px;
+      }
+    //   .sainapse-holder{
+    //     @media (max-width: 991px) {
+    //         padding: 50px 0px;
+    //     }
+    //   }
+      .sainapse-holder.sample-pace p{
+          color: #000000;
+          font-weight: 300;
+          font-size: 28px;
+          text-align: center;
+          width: 70%;
+          margin: 0 auto;
+          line-height: 2.6;
+        //   @media (max-width: 991px) {
+        //     line-height: 1.6;
+        // }
+      }
+      .bacground-container {
+          width: 1201px;
+          display: inline-block;
+          text-align: left;
+          background-color: #fff;
+      }
+      .sainapse-holder {
+          padding: 90px 0px;
+      }
+    
+  
+  }
+  
+  .pace{
+      .container{
+          .heading{
+            color: #000000;
+          }
+        margin-bottom: 18px;
+        @media (max-width: 991px){
+            margin-top: 0px !important;
+            margin-bottom: 0px;
+        }
+        .pace-banner-content{
+            color: #58595B;
+            font-size: 30px;
+            .pace-orange{
+                color:#EA7224 !important;
+            }
+            .pace-ash{
+                padding-left: 10px;
+            }
+        }
+      }
+  }
+  .pace-info {
+      p {
+          margin-bottom: 0px !important;
+      }
+  }
+  .sainapse-pace {
+      background: $color-white;
+      padding: 0px 0px 85px !important;
+      margin-top: 10px !important;
+      @media (max-width:767px){
+        padding: 0px 0px 80px !important;
+      }
+      .pace-desc {
+            color: #58595B;
+      }
+  }
+.pace-icons {
+    // margin-top: -100px;
+    position: relative;
+    @media(max-width: 991px) {
+        margin-top: 0;
+    }
+    .plan-cards {
+        padding: 0;
+        .white-bg {
+            background: #fff;
+        }
+        .pace-intro {
+            // padding: 74px;
+        }
+    }
+}
+
+.accuracy-holder {
+    background: #F5F5F5;
+    padding: 40px 0px;
+    @media (max-width:575px){
+        margin-bottom: -32px;
+    }
+}
+
+.plan-cards .title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+@media(max-width: 991px) {
+    .inner-video-section .line {
+        display: none !important;
+    }
+}
+
+.bg-img {
+    background: url(../../../../assets/frontend-assets/images/pacepage/Pattern.svg) no-repeat;
+    /* background-size: cover; */
+    width: 600px;
+    height: 72px;
+    text-align: right;
+    float: right;
+    @media(max-width: 1024px){
+        width: 450px;
+    }
+    @media(max-width: 991px){
+        width: 380px;
+    }
+}
+
+.short-description {
+    font-size: 23px;
+    color: #4A4A4A;
+    @media (max-width:767px){
+        font-size: 18px;
+    }
+}
+.feature-heading {
+    font-size: 38px;
+    font-weight: $fontWeight-medium;
+    @media (max-width:767px){
+        font-size: 21px;
+        margin-top:40px
+    }
+}
+
+.learn-more-btn {
+    background: transparent;
+    border: 1px solid #2A2A2A;
+    padding: 5px 10px;
+}
+
+.learn-more-btn:hover {
+    background: #eb962b !important;
+    border-color: #eb962b;
+    color: #fff;
+}
+
+.rpx-0 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    @media(max-width: 991px) {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+}
+
+.pace .container {
+    position: static;
+}
+
+ .line {
+    width: 113px;
+    height: 5px;
+    background-color: #28afb0;
+    opacity: 0.4;
+    display: inline-block;
+}
+
+@media(max-width: 991px) { 
+    .pace .container .inner-video-section {
+        padding: 0;
+    }
+    
+    .pace .video-section {
+        width: auto;
+    }
+}
+
+.pace-icons .container-fluid {
+    width: calc(100% - 10%);
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.pace .inner-video-section {
+    padding: 0 !important;
+}
+@media (min-width: 320px) and (max-width: 375px) {
+    .banner-title.d-flex.align-items-center.sainapse-over {
+        margin-top: 29px;
+        margin-bottom: 10px !important;
+    }
+    .Sainaps-world-architecture .sainapse-holder.sample-pace p {
+        font-size: 22px;
+        width: 100%;
+
+    }
+    .Sainaps-world-architecture .bacground-container {
+        width: 100%;
+    }
+    .Sainaps-world-architecture .sainapse-holder {
+        padding: 40px 0px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: 0px;
+    }
+    .Sainaps-world-architecture .sainapse-holder p {
+        font-size: 16px;
+        width: 100%;
+    }
+}
+@media (min-width: 376px) and (max-width: 767px) {
+    .banner-title.d-flex.align-items-center.sainapse-over {
+      
+        margin-bottom: 10px !important;
+    }
+    .Sainaps-world-architecture .sainapse-holder.sample-pace p {
+        font-size: 25px;
+        width: 100%;
+        margin-bottom: 10px;
+
+    }
+    .Sainaps-world-architecture {
+        margin-top: 0px;
+    }
+    .Sainaps-world-architecture .bacground-container {
+        width: 100%;
+    }
+    .Sainaps-world-architecture .sainapse-holder {
+        padding: 40px 0px;
+    }
+    .Sainaps-world-architecture .sainapse-holder .sainapse h1, .sainapse-holder .sainapse h2 {
+        font-size: 23px;
+    }
+    .Sainaps-world-architecture .sainapse-holder p {
+        font-size: 16px;
+        width: 100%;
+    }
+    .Sainaps-world-architecture .sainapse-holder {
+        padding-bottom: 20px;
+    }
+}
+@media (min-width:768px) and (max-width: 800px) {
+    .Sainaps-world-architecture .desktop-img {
+        position: absolute;
+        top: -271px;
+        right: 46px;
+    }
+    .Sainaps-world-architecture .sainapse-holder.sample-pace p {
+        width: 90%;
+    }
+    .Sainaps-world-architecture .bacground-container {
+        width: 641px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -48px;
+    }
+    
+}
+@media (min-width:801px) and (max-width: 991px) {
+    .Sainaps-world-architecture .sainapse-holder.sample-pace p {
+        width: 90%;
+    }
+    .Sainaps-world-architecture .desktop-img {
+        position: absolute;
+        top: -271px;
+        right: 46px;
+    }
+    h1.sainapse-hd {
+        font-size: 30px !important;
+        margin-top: 48px !important;
+    }
+    
+   
+    .Sainaps-world-architecture .bacground-container {
+        width: 668px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -41px;
+        }
+}
+@media (min-width:992px) and (max-width: 1023px) {
+    .banner-title.d-flex.align-items-center.sainapse-over {
+        margin-top: 0px;
+    }
+        .Sainaps-world-architecture .bacground-container {
+        width: 828px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -51px;
+    }
+}
+@media (min-width:1024px) and (max-width: 1100px) {
+  
+    .Sainaps-world-architecture .bacground-container {
+        width: 854px;
+    }
+    .Sainaps-world-architecture .sainapse-holder {
+        padding: 65px 0px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -52px;
+    }
+}
+@media (min-width:1101px) and (max-width: 1150px) {
+  
+    .Sainaps-world-architecture .bacground-container {
+        width: 918px;
+    }
+    .Sainaps-world-architecture .sainapse-holder {
+        padding: 65px 0px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -56px;
+    }
+}
+@media (min-width:1151px) and (max-width: 1190px) {
+  
+    .Sainaps-world-architecture .bacground-container {
+         width: 959px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -59px;
+        }
+    .Sainaps-world-architecture .sainapse-holder {
+        padding: 65px 0px;
+    }
+}
+@media (min-width:1151px) and (max-width: 1190px) {
+  
+    .Sainaps-world-architecture .bacground-container {
+        width: 959px;
+   }
+   .Sainaps-world-architecture {
+       margin-top: -59px;
+    }
+}
+@media (min-width:1191px) and (max-width: 1200px) {
+  
+    .Sainaps-world-architecture .bacground-container {
+        width: 993px;
+   }
+   .Sainaps-world-architecture {
+       margin-top: -61px;
+    }
+}
+@media (min-width:1201px) and (max-width: 1245px) {
+ 
+    .Sainaps-world-architecture .bacground-container {
+        width: 1000px;
+   }
+   .Sainaps-world-architecture {
+       margin-top: -61px;
+    }
+}
+@media (min-width:1246px) and (max-width: 1299px) {
+  
+    .Sainaps-world-architecture .bacground-container {
+          width: 1040px;
+   }
+   .Sainaps-world-architecture {
+    margin-top: -64px;
+    }
+}
+@media (min-width:1300px) and (max-width: 1390px) {
+   
+    .Sainaps-world-architecture .bacground-container {
+        width: 1085px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -66px;
+    }
+}
+@media (min-width:1391px) and (max-width: 1420px) {
+  
+    .Sainaps-world-architecture .bacground-container {
+        width: 1183px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -72px;
+    }
+}
+@media (min-width:2501px) and (max-width: 2560px) {
+    .Sainaps-world-architecture .bacground-container {
+        width: 1183px;
+    }
+    .Sainaps-world-architecture {
+        margin-top: -130px;
+    }
+    .Sainaps-world-architecture .sainapse-holder {
+        padding: 142px 0px;
+    }
+}

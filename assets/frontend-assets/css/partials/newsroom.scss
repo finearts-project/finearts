@@ -1,0 +1,428 @@
+.banner-newsroom {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  h1 {
+    font-size: $fontSize-hero;
+    font-weight: $fontWeight-medium !important;
+    color: $color-white;
+    position: absolute;
+    top: 25%;
+    @media (max-width:767px){
+      font-size: 36px;
+      top: 50px;
+    }
+    @media (min-width:768px) and (max-width:991px){
+      top: 55px;
+    }
+    @media (min-width:992px) and (max-width:1200px){
+      top: 30%;
+    }
+  }
+}
+.card-sections-newsroom {
+  margin-top: -20%;
+  position: relative;
+  text-align: center;
+  .newsroom-container {
+    width: 1275px;
+    display: inline-block;
+    text-align: left;
+    background-color: #fff;
+    margin-top: 25px;
+    border-radius: 12px;
+    .news-holder {
+      padding: 50px 0px;
+      @media (max-width:767px){
+        padding: 0px;
+      }
+      @media (min-width:425px) and (max-width:575px){
+        padding: 15px 0px 0px;
+      }
+      .new-realese {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        p {
+          margin-left: 10px;
+          margin-bottom: 0px;
+          font-weight: $fontWeight-medium;
+        }
+      }
+      .news-cards {
+       padding:25px;
+       position: relative;
+       margin: 0 auto;
+       overflow: hidden;
+       border: 1px solid #EDEDED;
+       margin-bottom: 25px;
+       min-height: 215px;
+        .card-imagebox{ 
+            display: inline-block;
+            overflow: hidden; 
+            img{
+                width: 100%;
+                display: block;
+        transition: transform .4s; 
+
+            }
+        }
+        .card-para1{
+            font-weight: $fontWeight-medium;
+            color: #000000;
+            font-size: 20px;
+        }
+        .card-para2{
+            color: #4A4A4A;
+           opacity: 0.67;
+           font-size: 13px;
+          //  width: 90%;
+           margin-top: 3px;
+        }
+      }
+      .news-cards:hover .card-imagebox img {
+        transform: scale(1.3);
+        transform-origin: 50% 50%;
+        cursor: pointer;
+      }  
+      .news-cards:hover{
+        box-shadow: 5px 6px 15px 3px rgba(221,222,235,0.7)!important;
+          .going-path {
+            margin-left: 231px;
+            transition: 0.10s ease-in;
+            margin-top: 1px;
+          }
+          .fade-arrow{
+            transition: 0.8s ease-in;
+            opacity: 1;
+            color:orange;
+          }
+      }
+      .fade-arrow{
+        opacity: 0;
+        transition: 0.8s ease-in;
+      }
+      .samll-animate{
+          display: flex;
+          justify-content: space-between;
+      }      
+    }
+  }
+}
+
+// Media quareies
+
+// Arrow sections
+@media (min-width: 320px) and (max-width: 359px) {
+  .card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+    margin-left: 179px;
+    margin-top: 3px;
+  }
+}
+@media (min-width: 340px) and (max-width: 360px) {
+  .card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+    margin-left: 221px;
+    margin-top: 3px;
+}
+}
+@media (min-width: 361px) and (max-width: 375px) {
+  .card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+    margin-left: 236px;
+    margin-top: 3px;
+}
+}
+@media (min-width: 376px) and (max-width: 411px) {
+  .card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+    margin-left: 270px;
+    margin-top: 2px;
+  
+}
+}
+@media (min-width: 412px) and (max-width: 425px) {
+  .card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+    margin-left: 284px;
+    margin-top: 2px;
+}
+.card-imagebox{ 
+  display: block !important;
+}
+}
+
+// Bacic responsive
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .card-sections-newsroom {
+   margin-top: 0px; 
+}
+.card-sections-newsroom .newsroom-container {
+  width: 100%;
+}
+.banner-newsroom p {
+  top: 13px;
+  left: 24px;
+}
+
+.card-sections-newsroom .newsroom-container .news-holder .news-cards {
+  padding: 20px;
+}
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+  .card-sections-newsroom {
+   margin-top: 0px; 
+}
+.card-sections-newsroom .newsroom-container {
+  width: 100%;
+}
+.banner-newsroom p {
+  top: 13px;
+  left: 24px;
+}
+
+.card-sections-newsroom .newsroom-container .news-holder .news-cards {
+  padding: 20px;
+}
+}
+
+@media (min-width: 426px) and (max-width: 575px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 400px;
+}
+.card-sections-newsroom {
+  margin-top: -66px;
+}
+.banner-newsroom p {
+  top: 28px;
+  left: 74px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 249px;
+  margin-top: 2px;
+}
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 550px;
+}
+.card-sections-newsroom {
+  margin-top: -70px;
+}
+.banner-newsroom p {
+  top: 22px;
+  left: 28px;
+}
+.card-sections-newsroom .newsroom-container .news-holder {
+  padding: 50px 6px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards {
+  padding: 13px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards .card-para1 {
+  font-size: 13px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards .card-para2 {
+  font-size: 11px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 57px;
+}
+.letsTalk-sec .lets-talk-wrapper .round-image {
+  display: none;
+}
+}
+@media (min-width: 768px) and (max-width: 800px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 640px;
+}
+.card-sections-newsroom {
+  margin-top: -135px;
+}
+.banner-newsroom p {
+  top: 22px;
+  left: 28px;
+}
+.card-sections-newsroom .newsroom-container .news-holder {
+  padding: 50px 0px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards {
+  padding: 10px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards .card-para1 {
+  font-size: 13px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards .card-para2 {
+  font-size: 11px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 201px;
+  margin-top: 2px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .new-realese {
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+}
+.round-image {
+  position: absolute;
+  top: 0px;
+  right: 161px !important;
+  height: 100%;
+}
+}
+
+@media (min-width: 801px) and (max-width: 991px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 685px;
+}
+.card-sections-newsroom {
+  margin-top: -135px;
+}
+.banner-newsroom p {
+  top: 22px;
+  left: 48px;
+}
+.card-sections-newsroom .newsroom-container .news-holder {
+  padding: 50px 0px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards {
+  padding: 15px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards .card-para1 {
+  font-size: 13px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards .card-para2 {
+  font-size: 11px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 214px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .new-realese {
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+}
+.round-image {
+  position: absolute;
+  top: 0px;
+  right: 161px !important;
+  height: 100%;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1023px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 895px;
+}
+
+.banner-newsroom p {
+  top: 32px;
+  left: 42px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 149px;
+  margin-top: 2px;
+}
+}
+@media (min-width: 1024px) and (max-width: 1090px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 895px;
+}
+.banner-newsroom p {
+  top: 32px;
+  left: 56px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 149px;
+  margin-top: 2px;
+}
+}
+
+
+@media (min-width: 1091px) and (max-width: 1120px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 914px;
+}
+.card-sections-newsroom {
+  margin-top: -207px;
+}
+.banner-newsroom p {
+  top: 32px;
+  left: 88px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 156px;
+  margin-top: 2px;
+}
+}
+@media (min-width: 1121px) and (max-width: 1190px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 919px;
+}
+.card-sections-newsroom {
+  margin-top: -207px;
+}
+.banner-newsroom p {
+  top: 32px;
+  left: 99px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 156px;
+  margin-top: 2px;
+}
+}
+@media (min-width: 1191px) and (max-width: 1220px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 1090px;
+  }
+
+.banner-newsroom p {
+  top: 32px;
+  left: 56px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 171px;
+}
+}
+@media (min-width: 1221px) and (max-width: 1250px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 1090px;
+  }
+.card-sections-newsroom {
+  margin-top: -253px;
+}
+.banner-newsroom p {
+  top: 32px;
+  left: 76px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 214px;
+  margin-top: 2px;
+}
+}
+@media (min-width: 1251px) and (max-width: 1339px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 1090px;
+  }
+
+.banner-newsroom p {
+  top: 44px;
+  left: 103px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 213px;
+}
+}
+@media (min-width: 1340px) and (max-width: 1400px) {
+  .card-sections-newsroom .newsroom-container {
+    width: 1090px;
+  }
+
+.banner-newsroom p {
+  top: 44px;
+  left: 140px;
+}
+.card-sections-newsroom .newsroom-container .news-holder .news-cards:hover .going-path {
+  margin-left: 215px;
+}
+}

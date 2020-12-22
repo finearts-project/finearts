@@ -1,0 +1,55 @@
+.sitemap-page {
+    margin: 125px 0px 65px;
+    
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+        color: #000000;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @media (max-width:767px) {
+            font-size: 26px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .sitemap-title {
+        text-align: left;
+        font-size: 18px;
+        letter-spacing: 0px;
+        color: #e9791a;
+        opacity: 1;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .sitemap-links {
+        display: grid;
+
+        a {
+            width: max-content;
+            color: #000000;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+    }
+}
+
+.sitemap-holder, .not-found {
+    background: $color-white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    transition: 0.3s ease-in-out;
+
+    .color-logo {
+        display: block;
+    }
+
+    .white-logo {
+        display: none;
+    }
+
+    .custom-link {
+        color: $color-black !important;
+    }
+}

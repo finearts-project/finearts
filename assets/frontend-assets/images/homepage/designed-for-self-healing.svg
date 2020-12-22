@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="221.618" height="154.906" viewBox="0 0 221.618 154.906">
+  <g id="Designed_for_self-healing" data-name="Designed for self-healing" transform="translate(-49.434 -747.198)">
+    <rect id="Rectangle_430" data-name="Rectangle 430" width="221.618" height="154.145" transform="translate(49.434 747.198)" fill="#f4d35e" opacity="0.26"/>
+    <path id="Path_3033" data-name="Path 3033" d="M55.152,902.1a105.091,105.091,0,0,1,210.182,0" fill="#28afb0"/>
+    <path id="Path_3034" data-name="Path 3034" d="M81.931,902.1a78.312,78.312,0,1,1,156.624,0" fill="#e9791a"/>
+    <path id="Path_3035" data-name="Path 3035" d="M110.385,902.1a49.858,49.858,0,1,1,99.716,0" fill="#f4d35e"/>
+    <g id="Group_1127" data-name="Group 1127">
+      <g id="Group_1116" data-name="Group 1116">
+        <path id="Path_1219" data-name="Path 1219" d="M160.241,748.863l19.045,32.984H141.2Z" fill="#f4d35e"/>
+      </g>
+      <g id="Group_1117" data-name="Group 1117">
+        <path id="Path_1220" data-name="Path 1220" d="M160.241,799.872l19.045,32.985H141.2Z" fill="#f4d35e"/>
+      </g>
+    </g>
+    <circle id="Ellipse_2584" data-name="Ellipse 2584" cx="9.068" cy="9.068" r="9.068" transform="translate(151.175 874.685)" fill="#e9791a"/>
+    <g id="Group_2183" data-name="Group 2183">
+      <g id="Group_2181" data-name="Group 2181">
+        <rect id="Rectangle_431" data-name="Rectangle 431" width="29.935" height="5.997" transform="translate(66.963 790.86)" fill="#e9791a"/>
+      </g>
+      <g id="Group_2182" data-name="Group 2182">
+        <rect id="Rectangle_432" data-name="Rectangle 432" width="5.997" height="29.934" transform="translate(78.932 778.891)" fill="#e9791a"/>
+      </g>
+    </g>
+    <g id="Group_2186" data-name="Group 2186">
+      <g id="Group_2184" data-name="Group 2184">
+        <rect id="Rectangle_433" data-name="Rectangle 433" width="29.935" height="5.997" transform="translate(223.588 790.86)" fill="#e9791a"/>
+      </g>
+      <g id="Group_2185" data-name="Group 2185">
+        <rect id="Rectangle_434" data-name="Rectangle 434" width="5.997" height="29.934" transform="translate(235.557 778.891)" fill="#e9791a"/>
+      </g>
+    </g>
+  </g>
+</svg>

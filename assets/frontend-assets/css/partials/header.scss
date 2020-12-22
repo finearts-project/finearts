@@ -1,0 +1,190 @@
+.header-holder {
+    background: $color-white;
+    transition: 0.3s ease-in-out;
+
+    @media (min-width:992px) {
+        background: linear-gradient(180deg, #020024 0%, rgba(0, 0, 13, 0.8295693277) 0%, rgba(0, 0, 0, 0.4) 53%, rgba(0, 0, 0, 0) 100%);        padding: 10px 1rem !important;
+    }
+
+    .nav-item:hover .dropdown-toggle::after {
+       
+        @media (min-width:992px){
+            transform: rotate(-135deg) !important;
+            -webkit-transform: rotate(-135deg) !important;
+            vertical-align: 0em;
+            transition: all 0.3s ease;
+            top: 18px;
+        }
+    }
+
+    .nav-item .active {
+        border-bottom: 3px solid #E9791A !important;
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-toggle::after {
+        border: solid;
+        border-width: 0 .012rem .012rem 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        position: absolute;
+        top: 13px;
+        @media (min-width:1200px) {
+            right: -5px;
+        }
+    }
+
+    .dropdown-item {
+        color: #332D36;
+        font-weight: 400;
+        font-size: 14px;
+        padding: .35rem 2rem;
+        @media (max-width:991px){
+            padding: 0.35rem 0.5rem;
+        }
+    }
+
+    .dropdown-custom {
+        background: #fff;
+        margin-top: 0px;
+        padding: 5px 0px;
+        @media (min-width:992px){
+            box-shadow: 0 2px 8px 3px rgba(194, 194, 194, 0.12);
+            margin-top: 15px;
+            padding: 16px 0px;
+        }
+    }
+
+    .dropdown-item:active {
+        background: $color-white;
+        color: #332D36;
+    }
+    .dropdown-item:hover {
+        color: #e9791b !important;
+        background-color: $color-white !important;
+    
+    }
+
+    .dropdown:hover>.dropdown-menu {
+        @media (min-width:992px){
+            display: block;
+            margin-bottom: 20px;
+            margin-top: -1px;
+            border-radius: 0;
+            border: none;
+            padding: 0px;
+            background: transparent;
+        }
+        @media (max-width:991px) {
+            margin-bottom: 12px;
+            box-shadow: none;
+        }
+    }
+
+    .dropdown>.dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+        @media (min-width:992px){
+            pointer-events: none;
+        }
+    }
+
+    .nav-link {
+        color: $color-black !important;
+        font-weight: $fontWeight-medium;
+        font-size: 16px;
+        margin-left: 24px;
+    }
+
+    .custom-link {
+        @media (min-width:992px) {
+            color: $color-white !important;
+        }
+    }
+
+    .color-logo {
+        @media (min-width:992px) {
+            display: none;
+        }
+    }
+
+    .white-logo {
+        @media (max-width:991px) {
+            display: none;
+        }
+    }
+
+}
+
+.header-sticky {
+    background: $color-white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    transition: 0.3s ease-in-out;
+
+    .color-logo {
+        display: block;
+    }
+
+    .white-logo {
+        display: none;
+    }
+}
+
+@media(max-width: 991px) {
+    .dropdown-menu {
+        border: 0 !important;
+        padding: 0px !important;
+    }
+
+    .sainapse-logo {
+        margin-bottom: 15px !important;
+    }
+
+    .header-holder .nav-link {
+        margin-left: 0 !important;
+    }
+
+    .navbar-collapse.show {
+        width: 100%;
+        background: #fff;
+    }
+    .navbar-light .navbar-toggler {
+        border-color: transparent !important;
+        &:focus {
+            outline: 0 !important;
+        }
+    }
+}
+.header-logo {
+    width: 204px !important;
+}
+
+.sainapse-floating {
+    position: fixed;
+    top: 45%;
+    right: -47px;
+    z-index: 999;
+    background: #E97A33;
+    transform: rotate(-90deg);
+    padding: 5px 10px;
+    button {
+      color: #fff;
+      font-weight: 500;
+      &:hover {
+          color: #fff;
+      }
+      &:focus {
+        box-shadow: none;
+    }
+    img {
+        transform: rotate(90deg);
+    width: 18px;
+    margin-right: 8px;
+    }
+    }
+    @media (max-width:991px){
+        top:45%;
+    }
+}

@@ -1,0 +1,215 @@
+@import "../variables.scss";
+
+.integration--page {
+    position: relative;
+    margin-top: -91px;
+
+    @media (max-width:991px) {
+        margin-top: -83px !important;
+    }
+
+    .brief-banner {
+        height: 720px;
+        @media (max-width:991px) {
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+
+    .banner-holder {
+        @media (min-width:992px) {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-30%);
+        }
+
+        @media (max-width:991px) {
+            margin-top: -425px;
+        }
+
+        .banner-info {
+            margin-top: 35px;
+
+            h1 {
+                color: $color-white;
+                font-weight: 700;
+                margin-bottom: 40px;
+                font-size: 56px;
+
+                @media (max-width:991px) {
+                    font-size: 36px;
+                }
+            }
+
+            .download-benefits {
+                p {
+                    color: $color-white;
+                    font-size: 24px;
+                    font-weight: 400;
+                    margin-bottom: 25px;
+                }
+
+                ul {
+                    color: #fff;
+                    list-style: none;
+                    padding-left: 0;
+
+                    li {
+                        display: flex;
+                        margin-bottom: 16px;
+
+                        .material-icons {
+                            font-size: 20px !important;
+                            color: #E9791A;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        .solution--form {
+            box-shadow: 0px 3px 56px #00000029;
+            border-radius: 19px;
+            background: $color-white;
+            padding: 50px 65px;
+            margin-bottom: 50px;
+
+            @media (max-width:991px) {
+                padding: 35px 25px;
+            }
+
+            h4 {
+                font-size: 26px;
+                margin-bottom: 30px;
+                font-weight: 500;
+                color: #2A2A2A;
+            }
+
+            .form-group {
+                margin-bottom: 28px;
+
+                label {
+                    margin-bottom: 0;
+                    color: #2a2a2ab0;
+
+                }
+            }
+
+            .checkbox-input {
+
+                input,
+                label {
+                    cursor: pointer;
+                }
+
+                label {
+                    color: #2a2a2a;
+
+                }
+            }
+
+            .terms {
+                color: #969696d9;
+
+                p {
+                    line-height: 20px;
+                    font-size: 15px;
+                }
+            }
+
+            .soln--btn {
+                padding: 12px !important;
+                font-size: 16px !important;
+                background-color: #E9791A !important;
+                border: 1px solid #E9791A !important;
+                color: #fff !important;
+
+            }
+
+            input[type=checkbox] {
+                height: 16px;
+                width: 16px;
+                border-radius: 0;
+
+            }
+
+            .form-control {
+                border-bottom: 1px solid #2a2a2ab0 !important;
+                color: #000 !important;
+                font-weight: 400 !important;
+                font-size: 16px !important;
+
+                &:focus {
+                    border-bottom: 1px solid black !important;
+                }
+            }
+
+            .iti {
+                width: 100%;
+            }
+
+            .iti__selected-flag {
+                padding: 0px 5px;
+                margin-left: -1px;
+            }
+
+            .phone-field {
+                padding-left: 47px !important;
+            }
+        }
+    }
+
+
+}
+
+.why--sainapse {
+    margin-top: 110px;
+
+    @media (max-width:991px) {
+        margin-top: 0;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 26px;
+
+        @media (max-width:767px) {
+            font-size: 23px;
+        }
+    }
+    ul {
+        padding-left: 6px;
+        li {
+        color: #4B4C4D;
+        font-size: 16px;
+        text-align: left;
+        font-weight: 400;
+        margin-bottom: 27px;
+        list-style: none;
+        display: flex;
+          i {
+            font-size: 9px;
+            margin-top: 6px;
+            margin-right: 12px;
+            color: #E9791A;
+          }
+      }
+    }
+}
+
+.footer--holder {
+    padding: 38px 0px;
+    margin-top: 75px;
+
+    .copy-rights-corner,
+    .followLinkedIn {
+        font-size: 14px;
+        letter-spacing: 0px;
+        color: #C7C7C7;
+        opacity: 1;
+        font-weight: 300;
+        text-align: center;
+    }
+}
