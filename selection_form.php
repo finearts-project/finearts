@@ -20,6 +20,13 @@
                     <span id="sub_event_name_err" style="color:red"></span>
                 </div>
             </div>
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Date</label>
+                    <input type="text" name="event_date" class="form-control" id="event_date">
+                    <span id="event_date_err" style="color:red"></span>
+                </div>
+            </div>
         </div>
         <div id="add-student" class="row">
             <div class="col-10">
@@ -194,6 +201,7 @@ function save_event() {
     {
         var data = new FormData();
         data.append("reg_no",reg_no);
+        data.append("event_date",$("#event_date").val());
         data.append("name", name);
         data.append("course",course);
         data.append("year",year);
@@ -212,7 +220,7 @@ function save_event() {
             contentType: false,
             success: function(result) {
                 if (result) {
-                    window.location.reload();
+                    //window.location.reload();
                 }
                 else{
                     $("#login_err").html("Email or Password is Incorrect");

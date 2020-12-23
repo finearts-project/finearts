@@ -82,15 +82,82 @@ else if($action == 'save_students_event')
     $course = explode(",",$_POST['course']);
     $year = explode(",",$_POST['year']);
     $event_id =$_POST['event_id'];
+    $event_date =$_POST['event_date'];
     $sub_event_id = $_POST['sub_event_id'];
     $event_name = $_POST['event_name'];
     $sub_event_name =$_POST['sub_event_name'];
     $date = date("yy-m-d");
     for($i=0; $i<count($reg_no);$i++)
     {
-        $query = "INSERT INTO `selection_form` (`register_no`, `name`, `course`, `year`, `create_date`,`event_id`,`sub_event_id`,`event_name`,`sub_event_name`) 
-                    VALUES ('$reg_no[$i]', '$name[$i]', '$course[$i]', '$year[$i]', '$date','$event_id','$sub_event_id','$event_name','$sub_event_name');";
+        $query = "INSERT INTO `selection_form` (`register_no`, `name`, `course`, `year`, `create_date`,`event_id`,`sub_event_id`,`event_name`,`sub_event_name`,`event_date`) 
+                    VALUES ('$reg_no[$i]', '$name[$i]', '$course[$i]', '$year[$i]', '$date','$event_id','$sub_event_id','$event_name','$sub_event_name','$event_date');";
         $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
     }
     echo true;
+}
+else if($action == 'get_student_list'){
+    extract($GLOBALS);
+    $id = $_POST['id'];
+    $date = $_POST['date'];
+    $query = "SELECT * FROM `selection_form` WHERE `event_id` = $id AND `event_date` = '$date' AND `delete_status` = 'N'" ;
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+    $arr = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $arr[] = $row;
+    }
+    $output = '<thead>
+    <th>Roll Number</th>
+    <th>Name</th>
+    <th>Sub Event</th>
+    <th>Course</th>
+    <th>Year</th>
+    </thead><tbody>';
+    foreach($arr as $value)
+    {
+        $output .= '<tr>
+        <td>'.$value["register_no"].'</td> 
+        <td>'.$value["name"].'</td> 
+        <td>'.$value["sub_event_name"].'</td> 
+        <td>'.$value["course"].'</td>
+         <td>'.$value["year"].'</td> 
+         </tr>';
+    }
+    $output .= '</tbody>';
+    if(empty($arr))
+    {
+        $output = '';
+    }
+    echo $output;
+}
+
+else if($action=="save_full_list"){
+    extract($GLOBALS);
+    $event_id = $_POST['event_id'];
+    $event_name = $_POST['event_name'];
+    $sub_event_id = $_POST['sub_event_id'];
+    $sub_event_name = $_POST['sub_event_name'];
+    $programe_name = $_POST['programe_name'];
+    $level = $_POST['level'];
+    $venue = $_POST['venue'];
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+    $coordinator_name = $_POST['coordinator_name'];
+    $org_by = $_POST['org_by'];
+    $cat = $_POST['cat'];
+    $query2 =  $query = "SELECT * FROM `selection_form` WHERE `event_id` = $event_id AND `event_date` = '$from' AND `delete_status` = 'N'" ;
+    $result2 = mysqli_query($link, $query2) or die('Error in Query.' . mysqli_error($link));
+    $arr = array();
+    while ($row = mysqli_fetch_assoc($result2)) {
+        $arr[] = $row;
+    }
+    foreach($arr as $value){
+        $std_name = $value["name"];
+        $std_reg_no = $value["register_no"];
+
+    $query = "INSERT INTO `activity_form` (`event_id`, `event_name`, `sub_event_id`, `sub_event_name`, `programe_name`, `level`, `venue`, `from_date`, `to_date`, `coordinator_name`, `org_by`, `cat`,`student_reg_no`,`student_name`) 
+                VALUES ( '$event_id', '$event_name', '$sub_event_id', '$sub_event_name', 
+                '$programe_name', '$level', '$venue', '$from', '$to', '$coordinator_name', '$org_by', '$cat','$std_name','$std_reg_no');";
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+    }
+    echo $result;
 }
