@@ -67,7 +67,7 @@
                         <a class="nav-link" href="#"> <b> Coordinator login </b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> <b>Logout</b></a>
+                        <a class="nav-link" id="logout" href="javascript:vaid(0);"> <b>Logout</b></a>
                     </li>
                 </ul>
             </div>

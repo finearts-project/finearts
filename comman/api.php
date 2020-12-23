@@ -6,7 +6,7 @@ if (isset($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
 }
 if($action == 'login')
-{
+{   session_start();
     $email = $_POST['email'];
     $password = $_POST['password'];
     $role = $_POST['role'];
@@ -22,6 +22,7 @@ if($action == 'login')
     if($result->num_rows > 0)
     {
     $response['status'] = "success";
+    $_SESSION["isLogedin"] = true;
     $response['rows'] = $result->num_rows;
     }
     else {
@@ -66,4 +67,30 @@ else if($action == 'save_event')
     $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
     $req_id = mysqli_insert_id($link);
     echo $req_id;
+}
+
+else if($action == 'logout'){
+    session_start();
+    session_destroy();    
+}
+
+else if($action == 'save_students_event')
+{
+    extract($GLOBALS);
+    $reg_no = explode(",",$_POST['reg_no']);
+    $name = explode(",",$_POST['name']);
+    $course = explode(",",$_POST['course']);
+    $year = explode(",",$_POST['year']);
+    $event_id =$_POST['event_id'];
+    $sub_event_id = $_POST['sub_event_id'];
+    $event_name = $_POST['event_name'];
+    $sub_event_name =$_POST['sub_event_name'];
+    $date = date("yy-m-d");
+    for($i=0; $i<count($reg_no);$i++)
+    {
+        $query = "INSERT INTO `selection_form` (`register_no`, `name`, `course`, `year`, `create_date`,`event_id`,`sub_event_id`,`event_name`,`sub_event_name`) 
+                    VALUES ('$reg_no[$i]', '$name[$i]', '$course[$i]', '$year[$i]', '$date','$event_id','$sub_event_id','$event_name','$sub_event_name');";
+        $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+    }
+    echo true;
 }

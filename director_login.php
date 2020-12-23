@@ -16,7 +16,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="javascript:void(0);"> <b> Coordinator</b></a>
+            <a href="javascript:void(0);"> <b> Director</b></a>
         </div>
         <div class="card">
             <div class="card-body login-card-body">
@@ -117,7 +117,7 @@ function login() {
                     // setInterval(function() {
                     //     $("#alert").hide();
                     // }, 3000);
-                    window.location.href = "dashboard.php"
+                    window.location.href = "event-register.php"
                 }
                 else{
                     $("#login_err").html("Email or Password is Incorrect");
