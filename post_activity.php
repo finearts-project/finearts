@@ -1,6 +1,7 @@
 <?php include("form_header.php")?>
 <?php include("comman/function.php")?>
-<?php  $events = get_events(); 
+<?php  
+$events = get_events(); 
 $coordinators = get_coordinators();
 $event_levels = get_event_level();?>
 <?php session_start(); if(!isset($_SESSION["isLogedin"]) || $_SESSION["isLogedin"] !=true) {
@@ -52,7 +53,7 @@ $event_levels = get_event_level();?>
                     <select name="level" class="form-control" id="level">
                         <option value="">[select]</option>
                         <?php foreach($event_levels as $event_level) {?>
-                        <option value="<?php echo $event_level['id']?>"><?php echo $event_level['level']?></option>
+                        <option value="<?php echo $event_level['level']?>"><?php echo $event_level['level']?></option>
                         <?php }?>
                     </select>
                     <span id="level_err" style="color:red"></span>
@@ -126,7 +127,7 @@ $event_levels = get_event_level();?>
                     <select name="coordinator_name" class="form-control" id="coordinator_name">
                         <option value="">[select]</option>
                         <?php foreach($coordinators as $coordinator) {?>
-                        <option value="<?php echo $coordinator['id']?>"><?php echo $coordinator['name']?></option>
+                        <option value="<?php echo $coordinator['name']?>"><?php echo $coordinator['name']?></option>
                         <?php }?>
                     </select>
                     <span id="coordinator_name_err" style="color:red"></span>
@@ -405,7 +406,7 @@ function save_post_list() {
         data.append("org_by", $("#org_by").val());
         data.append("level", $("#level").val());
         data.append("over_all", $("#over_all").val());
-        data.append("photo", $("#photo").val());
+        data.append("photo",$("#photo").prop('files')[0]);
         data.append("std_reg", $("#std_reg").val());
         data.append("std_name", $("#std_name").val());
         data.append("course", $("#course").val());
@@ -424,7 +425,7 @@ function save_post_list() {
             contentType: false,
             success: function(result) {
                 $("#sub_event_name").html(result);
-                window.location.reload();
+               // window.location.reload();
             }
         });
     }
