@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fine Arts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="assets/dist/css/ionicons.min.css">
-    <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body style="background-color:white!important" class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="javascript:void(0);"> <b> Director</b></a>
+            <a href="javascript:void(0);"> <b> Admin Fine Arts</b></a>
         </div>
         <div class="card">
             <div class="card-body login-card-body">
@@ -58,9 +58,9 @@
             <!-- /.login-card-body -->
         </div>
     </div>
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/dist/js/adminlte.min.js"></script>
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/dist/js/adminlte.min.js"></script>
 
 </body>
 
@@ -100,12 +100,12 @@ function login() {
         var data = new FormData();
         data.append("email", $("#email").val());
         data.append("password", $("#password").val());
-        data.append("role", "director");
+        data.append("role", "admin");
 
         $.ajax({
             type: "POST",
             async: false,
-            url: 'comman/api.php?action=login',
+            url: 'function-admin.php?action=admin_login',
             data: data,
             cache: false,
             processData: false, // important
@@ -113,11 +113,7 @@ function login() {
             success: function(result) {
                 var response = JSON.parse(result)
                 if (response.status == 'success') {
-                    // $("#alert").show();
-                    // setInterval(function() {
-                    //     $("#alert").hide();
-                    // }, 3000);
-                    window.location.href = "event-register.php"
+                    window.location.href = "dashboard.php";
                 }
                 else{
                     $("#login_err").html("Email or Password is Incorrect");

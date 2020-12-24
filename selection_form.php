@@ -139,8 +139,8 @@ function add_student() {
         '  <option value="">[No Sub Events]</option> <option value="1">I</option> <option value="2">II</option> <option value="3">III</option>';
     template += ' </select>';
     template += '   <span id="year_err_' + id_valid + '" style="color:red"></span>';
-    template += ' </div> <button class="del_id_' + id_valid + ' btn btn-sm btn-danger type="button" value="del_id_' +
-        id_valid + '" onclick="del_std(' + id_valid + ')">Delete Student</button>';
+    template += ' </div> <span class="del_id_' + id_valid + ' btn btn-sm btn-danger  value="del_id_' + id_valid +
+        '" onclick="del_std(' + id_valid + ')">Delete Student</span>';
     template += '  </div> ';
     $("#add-student").append(template);
     localStorage.setItem('id_valid', id_valid);
@@ -148,6 +148,7 @@ function add_student() {
 }
 
 function del_std(id) {
+    alert(id);
     var myobj = document.getElementsByClassName("del_id_" + id);
     myobj.remove();
 }
@@ -197,18 +198,17 @@ function save_event() {
     name = name.join();
     course = course.join();
     year = year.join();
-    if(parseInt(i)-1 == parseInt(valid))
-    {
+    if (parseInt(i) - 1 == parseInt(valid)) {
         var data = new FormData();
-        data.append("reg_no",reg_no);
-        data.append("event_date",$("#event_date").val());
+        data.append("reg_no", reg_no);
+        data.append("event_date", $("#event_date").val());
         data.append("name", name);
-        data.append("course",course);
-        data.append("year",year);
-        data.append("event_id",$("#event_name").val());
-        data.append("sub_event_id",$("#sub_event_name").val());
-        data.append("event_name",$('#event_name  option:selected').text());
-        data.append("sub_event_name",$('#sub_event_name  option:selected').text());
+        data.append("course", course);
+        data.append("year", year);
+        data.append("event_id", $("#event_name").val());
+        data.append("sub_event_id", $("#sub_event_name").val());
+        data.append("event_name", $('#event_name  option:selected').text());
+        data.append("sub_event_name", $('#sub_event_name  option:selected').text());
 
         $.ajax({
             type: "POST",
@@ -220,9 +220,8 @@ function save_event() {
             contentType: false,
             success: function(result) {
                 if (result) {
-                    //window.location.reload();
-                }
-                else{
+                    window.location.href = "activity_form.php";
+                } else {
                     $("#login_err").html("Email or Password is Incorrect");
                 }
             }

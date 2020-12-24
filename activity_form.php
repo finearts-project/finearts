@@ -320,7 +320,8 @@ function save_full_list(){
             processData: false, // important
             contentType: false,
             success: function(result) {
-                $("#sub_event_name").html(result)
+                $("#sub_event_name").html(result);
+                window.location.reload();
             }
         });
     }
