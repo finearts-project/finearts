@@ -161,3 +161,27 @@ else if($action=="save_full_list"){
     }
     echo $result;
 }
+
+else if($action == 'save_post_list'){
+    extract($GLOBALS);
+    $event_id = $_POST['event_id'];
+    $event_name = $_POST['event_name'];
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+    $org_by = $_POST['org_by'];
+    $level = $_POST['level'];
+    $over_all = $_POST['over_all'];
+    $photo = $_POST['photo'];
+    $std_reg = $_POST['std_reg'];
+    $std_name = $_POST['std_name'];
+    $course = $_POST['course'];
+    $year = $_POST['year'];
+    $coordinator_name = $_POST['coordinator_name'];
+    $cat = $_POST['cat'];
+    $sub_event_id = $_POST['sub_event_id'];
+    $sub_event_name = $_POST['sub_event_name'];
+    $date = date("yy-d-m");
+    $query = "INSERT INTO `post_activity` (`event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `from_date`, `to_date`, `org_by`, `level`, `over_all`, `photo`, `reg_no`, `name`, `course`, `year`, `coordinator_name`, `created_date`) 
+                                   VALUES ('$event_name', '$event_id','$sub_event_name','$sub_event_id', '$from',     '$to',   '$org_by ','$level','$over_all','photo','$std_reg','$std_name','$course', '$year', '$coordinator_name', '$date');";
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+}
