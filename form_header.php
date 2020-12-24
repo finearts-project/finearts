@@ -35,6 +35,9 @@
     :not(.layout-fixed) .main-sidebar {
         background: #003571;
     }
+    body{
+          background-color: #fff !important;
+        }
     </style>
 </head>
 

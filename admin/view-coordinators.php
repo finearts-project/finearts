@@ -1,6 +1,6 @@
 <?php include("header.php")?>
 <?php include("function-admin.php")?>
-<?php $list = get_activity_list();?>
+<?php $list = get_coordinators();?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -32,24 +32,19 @@
                         <thead>
                         <tr>
                             <th>Sino</th>
-                            <th>Register Number</th>
-                            <th>Student Name</th>
-                            <th>Event Name</th>
-                            <th>Sub Event</th>
-                            <th>From</th>
-                            <th>to</th>
+                            <th>Coordinator Id</th>
+                            <th>Coordinator Name</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                             <?php $i=1;  foreach($list as $addteam): ?>
                                 <tr>
                                     <td><?= $i ?></td>
-                                    <td><?= $addteam['student_reg_no'] ?></td>
-                                    <td><?= $addteam['student_name'] ?></td>
-                                    <td><?= $addteam['event_name'] ?></td>
-                                    <td><?= $addteam['sub_event_name'] ?></td>
-                                    <td><?= $addteam['from_date'] ?></td>
-                                    <td><?= $addteam['to_date'] ?></td>
+                                    <td><?= $addteam['coordinator_reg_no'] ?></td>
+                                    <td><?= $addteam['name'] ?></td>
+                                    <td><a href="add-edit-coordinator.php?edit=<?php echo $addteam['id']?>"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <a style="color:red" href="javascript:void(0)" onclick="del(<?php echo $addteam['id']?>)"><i class="fa fa-trash" aria-hidden="true"></i></td>
                                 </tr>
                             <?php $i+=1; endforeach ?>
                         </tfoot>
@@ -69,5 +64,13 @@
 <!-- /.control-sidebar -->
 
 
+<script>
 
+function del(id)
+{
+    $.post("function-admin.php?action=del_coor",{del_id : id},function(){
+        window.location.reload();
+    })
+}
+</script>
 <?php include("footer.php")?>

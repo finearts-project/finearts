@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 24, 2020 at 10:11 PM
+-- Generation Time: Dec 25, 2020 at 01:41 AM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.4.13
 
@@ -99,6 +99,7 @@ CREATE TABLE `coordinators` (
   `id` int(11) NOT NULL,
   `coordinator_reg_no` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
+  `designation` text,
   `delete_status` enum('Y','N') NOT NULL DEFAULT 'N',
   `create_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -107,10 +108,27 @@ CREATE TABLE `coordinators` (
 -- Dumping data for table `coordinators`
 --
 
-INSERT INTO `coordinators` (`id`, `coordinator_reg_no`, `name`, `delete_status`, `create_date`) VALUES
-(1, '1', 'coor_1', 'N', '2020-12-09 00:00:00'),
-(2, '2', 'coor_2', 'N', '2020-12-24 00:00:00'),
-(3, '3', 'coor_3', 'N', '2020-12-24 00:00:00');
+INSERT INTO `coordinators` (`id`, `coordinator_reg_no`, `name`, `designation`, `delete_status`, `create_date`) VALUES
+(2, '2', 'coor_2222sssssssccc', 'sd', 'Y', '2020-12-24 00:00:00'),
+(3, '3', 'coor_3', NULL, 'Y', '2020-12-24 00:00:00'),
+(5, '1', '1', '1', 'Y', '2020-12-24 00:00:00'),
+(6, ' asf', ' sdf', ' zdf', 'Y', '2020-12-24 00:00:00'),
+(7, ' 2', ' coor_2', ' sdf', 'Y', '2020-12-25 00:00:00'),
+(8, ' 2', ' coor_2', ' sadfasdf', 'Y', '2020-12-25 00:00:00'),
+(9, ' 2', ' coor_2', ' sadfasdf', 'Y', '2020-12-25 00:00:00'),
+(10, ' 2', ' coor_2', ' zdf', 'Y', '2020-12-25 00:00:00'),
+(11, '11', 'coor_11', '1', 'Y', '2020-12-09 00:00:00'),
+(12, ' 2', ' coor_2', ' zsd', 'Y', '2020-12-25 00:00:00'),
+(13, ' 2', ' coor_2', ' zsdzsd', 'Y', '2020-12-25 00:00:00'),
+(14, ' 2', ' coor_2', ' Sd', 'Y', '2020-12-25 00:00:00'),
+(15, ' 2', ' coor_2', ' ', 'Y', '2020-12-25 00:00:00'),
+(16, ' 2', ' coor_2', ' test', 'Y', '2020-12-25 00:00:00'),
+(17, ' 2', ' test', ' test', 'Y', '2020-12-25 00:00:00'),
+(18, ' 2', ' coor_2', ' asdf', 'Y', '2020-12-25 00:00:00'),
+(19, ' 2', ' coor_2', ' zxf', 'Y', '2020-12-25 00:00:00'),
+(20, ' 2', ' coor_2', ' zdf', 'Y', '2020-12-25 00:00:00'),
+(21, ' dddddddddddd', ' ddddddddddddd', ' dddddddddddd', 'Y', '2020-12-25 00:00:00'),
+(22, ' asf', ' sdf', ' zdf', 'N', '2020-12-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -132,12 +150,17 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`event_id`, `name`, `description`, `type`, `status`, `create_date`) VALUES
-(1, 'vocal', '', 'solo', 'N', '2020-12-23 00:00:00'),
-(2, 'Dance', '', 'group', 'N', '2020-12-23 00:00:00'),
-(3, 'Instrumantal', '', 'solo', 'N', '2020-12-23 00:00:00'),
-(4, 'Theater Event', '', 'group', 'N', '2020-12-23 00:00:00'),
-(5, 'Litral Event', '', 'solo', 'N', '2020-12-23 00:00:00'),
-(6, 'Drawing', '', 'group', 'N', '2020-12-23 00:00:00');
+(1, 'vocal1', 'vocal1weew', 'solo1', 'Y', '2020-12-23 00:00:00'),
+(2, 'Dance', 'zsf', 'group', 'Y', '2020-12-23 00:00:00'),
+(3, 'Instrumantal', '', 'solo', 'Y', '2020-12-23 00:00:00'),
+(4, 'Theater Event', '', 'group', 'Y', '2020-12-23 00:00:00'),
+(5, 'Litral Event', '', 'solo', 'Y', '2020-12-23 00:00:00'),
+(6, 'Drawing', '', 'group', 'Y', '2020-12-23 00:00:00'),
+(7, 'dfg', 'demo', ' ', 'Y', '2020-12-25 00:00:00'),
+(8, '', 'name', ' ', 'Y', '2020-12-25 00:00:00'),
+(9, '', 'name', ' ', 'Y', '2020-12-25 00:00:00'),
+(10, 'evname', 'evname', ' ', 'Y', '2020-12-25 00:00:00'),
+(11, 'echo $query;exit;', 'echo $query;exit;', ' ', 'N', '2020-12-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -392,12 +415,12 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `coordinators`
 --
 ALTER TABLE `coordinators`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `event_entry`
 --

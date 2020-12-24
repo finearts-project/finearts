@@ -1,6 +1,6 @@
 <?php include("header.php")?>
 <?php include("function-admin.php")?>
-<?php $list = get_activity_list();?>
+<?php $list = get_post_activity_list();?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -36,20 +36,20 @@
                             <th>Student Name</th>
                             <th>Event Name</th>
                             <th>Sub Event</th>
-                            <th>From</th>
-                            <th>to</th>
+                            <th>Over All</th>
+                            <th>Date (yyyy-mm-dd)</th>
                         </tr>
                         </thead>
                         <tbody>
                             <?php $i=1;  foreach($list as $addteam): ?>
                                 <tr>
                                     <td><?= $i ?></td>
-                                    <td><?= $addteam['student_reg_no'] ?></td>
-                                    <td><?= $addteam['student_name'] ?></td>
+                                    <td><?= $addteam['reg_no'] ?></td>
+                                    <td><?= $addteam['name'] ?></td>
                                     <td><?= $addteam['event_name'] ?></td>
                                     <td><?= $addteam['sub_event_name'] ?></td>
+                                    <td><?= $addteam['over_all'] ?></td>
                                     <td><?= $addteam['from_date'] ?></td>
-                                    <td><?= $addteam['to_date'] ?></td>
                                 </tr>
                             <?php $i+=1; endforeach ?>
                         </tfoot>

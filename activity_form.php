@@ -9,7 +9,7 @@ $event_levels = get_event_level();?>
 <div class="container" style="padding:50px">
     <h3 style="padding-bottom:20px">Activity Form</h3>
     <form method="post">
-        <div class="row">
+        <div class="row card-body">
             <div class="col-10">
                 <div class="form-group">
                     <label>Name of the program</label>
