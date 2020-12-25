@@ -41,6 +41,7 @@
                             <th>Event Name</th>
                             <th>Sub Event</th>
                             <th>Over All</th>
+                            <th>Photo</th>
                             <th>Date (yyyy-mm-dd)</th>
                         </tr>
                         </thead>
@@ -53,6 +54,7 @@
                                     <td><?= $addteam['event_name'] ?></td>
                                     <td><?= $addteam['sub_event_name'] ?></td>
                                     <td><?= $addteam['over_all'] ?></td>
+                                    <td> <img width="100px"class="img-thumbnail" src="../assets/images/<?= $addteam['photo'] ?>" alt=""> </td>
                                     <td><?= $addteam['from_date'] ?></td>
                                 </tr>
                             <?php $i+=1; endforeach ?>

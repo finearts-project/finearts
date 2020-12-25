@@ -194,7 +194,7 @@ else if($action == 'save_post_list'){
     $date = date("yy-m-d");
     move_uploaded_file($file_tmp,"../assets/images/".$file_name);
     $query = "INSERT INTO `post_activity` (`event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `from_date`, `to_date`, `org_by`, `level`, `over_all`, `photo`, `reg_no`, `name`, `course`, `year`, `coordinator_name`, `created_date`) 
-              VALUES ('$event_name', '$event_id','$sub_event_name','$sub_event_id', '$from',     '$to',   '$org_by ','$level','$over_all','photo','$std_reg','$std_name','$course', '$year', '$coordinator_name', '$date');";
+              VALUES ('$event_name', '$event_id','$sub_event_name','$sub_event_id', '$from',     '$to',   '$org_by ','$level','$over_all','$file_name','$std_reg','$std_name','$course', '$year', '$coordinator_name', '$date');";
     $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
     echo $result;
 }

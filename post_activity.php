@@ -425,7 +425,7 @@ function save_post_list() {
             contentType: false,
             success: function(result) {
                 $("#sub_event_name").html(result);
-               // window.location.reload();
+                window.location.reload();
             }
         });
     }

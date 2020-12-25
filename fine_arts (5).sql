@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 25, 2020 at 01:41 AM
+-- Generation Time: Dec 25, 2020 at 02:26 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.4.13
 
@@ -128,7 +128,8 @@ INSERT INTO `coordinators` (`id`, `coordinator_reg_no`, `name`, `designation`, `
 (19, ' 2', ' coor_2', ' zxf', 'Y', '2020-12-25 00:00:00'),
 (20, ' 2', ' coor_2', ' zdf', 'Y', '2020-12-25 00:00:00'),
 (21, ' dddddddddddd', ' ddddddddddddd', ' dddddddddddd', 'Y', '2020-12-25 00:00:00'),
-(22, ' asf', ' sdf', ' zdf', 'N', '2020-12-25 00:00:00');
+(22, ' asf', ' sdf', ' zdf', 'N', '2020-12-25 00:00:00'),
+(23, ' asf', ' sdf', ' zdf', 'Y', '2020-12-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -150,17 +151,18 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`event_id`, `name`, `description`, `type`, `status`, `create_date`) VALUES
-(1, 'vocal1', 'vocal1weew', 'solo1', 'Y', '2020-12-23 00:00:00'),
-(2, 'Dance', 'zsf', 'group', 'Y', '2020-12-23 00:00:00'),
-(3, 'Instrumantal', '', 'solo', 'Y', '2020-12-23 00:00:00'),
-(4, 'Theater Event', '', 'group', 'Y', '2020-12-23 00:00:00'),
-(5, 'Litral Event', '', 'solo', 'Y', '2020-12-23 00:00:00'),
-(6, 'Drawing', '', 'group', 'Y', '2020-12-23 00:00:00'),
+(1, 'vocal1', 'vocal1weew', 'solo', 'N', '2020-12-23 00:00:00'),
+(2, 'Dance', 'zsf', 'group', 'N', '2020-12-23 00:00:00'),
+(3, 'Instrumantal', '', 'solo', 'N', '2020-12-23 00:00:00'),
+(4, 'Theater Event', '', 'group', 'N', '2020-12-23 00:00:00'),
+(5, 'Litral Event', '', 'solo', 'N', '2020-12-23 00:00:00'),
+(6, 'Drawing', '', 'group', 'N', '2020-12-23 00:00:00'),
 (7, 'dfg', 'demo', ' ', 'Y', '2020-12-25 00:00:00'),
 (8, '', 'name', ' ', 'Y', '2020-12-25 00:00:00'),
 (9, '', 'name', ' ', 'Y', '2020-12-25 00:00:00'),
 (10, 'evname', 'evname', ' ', 'Y', '2020-12-25 00:00:00'),
-(11, 'echo $query;exit;', 'echo $query;exit;', ' ', 'N', '2020-12-25 00:00:00');
+(11, 'echo $query;exit;', 'echo $query;exit;', ' ', 'Y', '2020-12-25 00:00:00'),
+(12, '', '', ' ', 'N', '2020-12-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -194,7 +196,10 @@ INSERT INTO `event_entry` (`id`, `event_name`, `event_id`, `sub_event_name`, `su
 (8, 'Dance', '2', 'Debate ', '2', ' group', 'N', '2024-12-20 00:00:00'),
 (9, 'vocal', '1', 'Quiz ', '1', ' solo', 'N', '2024-12-20 00:00:00'),
 (10, 'vocal', '1', 'Quiz ', '1', ' solo', 'N', '2024-12-20 00:00:00'),
-(11, 'vocal', '1', 'Quiz ', '1', ' solo', 'N', '2024-12-20 00:00:00');
+(11, 'vocal', '1', 'Quiz ', '1', ' solo', 'N', '2024-12-20 00:00:00'),
+(12, 'Dance', '2', ' ', 'null ', ' solo', 'N', '2025-12-20 00:00:00'),
+(13, 'Dance', '2', 'Debate ', '2 ', ' group', 'N', '2025-12-20 00:00:00'),
+(14, 'Dance', '2', 'Debate ', '2 ', ' group', 'N', '2025-12-20 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -214,9 +219,11 @@ CREATE TABLE `event_level` (
 --
 
 INSERT INTO `event_level` (`id`, `level`, `delete_status`, `create_date`) VALUES
-(1, 'local', 'N', '2020-12-24 00:00:00'),
-(2, 'inter', 'N', '2020-12-24 00:00:00'),
-(3, 'Intra', 'N', '2020-12-24 00:00:00');
+(1, 'locala', 'Y', '2020-12-24 00:00:00'),
+(2, 'intere', 'N', '2020-12-24 00:00:00'),
+(3, 'Intra event', 'N', '2020-12-24 00:00:00'),
+(4, 'level_demo', 'Y', '2020-12-25 00:00:00'),
+(5, 'demo', 'N', '2020-12-25 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -263,7 +270,11 @@ INSERT INTO `post_activity` (`id`, `event_name`, `event_id`, `sub_event_name`, `
 (12, 'vocal', '1', 'Quiz', '1', '2020-12-24', '2020-12-24', 'Activity Form ', 'local', 'winner', 'photo', 'dfg', 'dfg', 'ug', '2', 'coor_1', '2020-12-24'),
 (13, 'vocal', '1', 'Quiz', '1', '2020-12-24', '2020-12-24', 'Activity Form ', 'inter', 'winner', 'photo', 'dfg', 'dfg', 'ug', '1', 'coor_1', '2020-12-24'),
 (14, 'Dance', '2', '', ' ', '2020-12-24', '2020-12-24', 'Activity Form ', 'inter', 'runner', 'photo', 'dfg', 'dfg', 'ug', '1', 'coor_1', '2020-12-24'),
-(15, 'Dance', '2', '', '', '2020-12-24', '2020-12-24', 'Activity Form ', 'inter', 'runner', 'photo', 'dfg', 'dfg', 'ug', '1', 'coor_1', '2020-12-24');
+(15, 'Dance', '2', '', '', '2020-12-24', '2020-12-24', 'Activity Form ', 'inter', 'runner', 'photo', 'dfg', 'dfg', 'ug', '1', 'coor_1', '2020-12-24'),
+(16, 'vocal1', '1', 'Quiz', '', '2020-12-25', '2020-12-25', 'zsxd ', 'intere', 'winner', 'photo', 'dfg', 'dfg', 'ug', '1', ' sdf', '2020-12-25'),
+(17, 'Instrumantal', '3', 'Mono Acting', '', '2020-12-26', '2020-12-26', 'demo ', 'intere', 'winner', 'photo', 'demo', 'demo', 'pg', '2', ' sdf', '2020-12-25'),
+(18, 'Instrumantal', '3', '', '', '2020-12-26', '2020-12-26', 'demo ', 'intere', 'winner', 'photo', 'demo', 'demo', 'pg', '2', ' sdf', '2020-12-25'),
+(19, 'Dance', '2', 'Debate', '', '2020-12-25', '2020-12-25', 'Activity Form ', 'intere', 'winner', 'first-time.png', 'dfg', 'dfg', 'pg', '1', ' sdf', '2020-12-25');
 
 -- --------------------------------------------------------
 
@@ -309,7 +320,11 @@ INSERT INTO `selection_form` (`id`, `event_id`, `sub_event_id`, `event_name`, `s
 (16, '2', '2', 'Dance', 'Debate', 'demo', 'demo', 'ug', '1', '2020-12-24', '2020-12-24 00:00:00', 'N'),
 (17, '1', '1', 'vocal', 'Quiz', 'dfh', 'dfgh', 'ug', '2', '2020-12-24', '2020-12-24 00:00:00', 'N'),
 (18, '1', '1', 'vocal', 'Quiz', 'activity_form.php', 'activity_form.php', 'ug', '2', '2020-12-24', '2020-12-24 00:00:00', 'N'),
-(19, '1', '1', 'vocal', 'Quiz', 'dfh', 'dfgh', 'ug', '1', '2020-12-24', '2020-12-24 00:00:00', 'N');
+(19, '1', '1', 'vocal', 'Quiz', 'dfh', 'dfgh', 'ug', '1', '2020-12-24', '2020-12-24 00:00:00', 'N'),
+(20, '2', '2', 'Dance', 'Debate', 'ï¸ jhb', 'ï¸ jhb', 'ug', '1', '2020-12-25', '2020-12-25 00:00:00', 'N'),
+(21, '2', '2', 'Dance', 'Debate', 'activity_form.php', 'activity_form.php', 'ug', '1', '2020-12-25', '2020-12-25 00:00:00', 'N'),
+(22, '2', '2', 'Dance', 'Debate', 'dfh', 'dfgh', 'ug', '2', '2020-12-25', '2020-12-25 00:00:00', 'N'),
+(23, '2', '2', 'Dance', 'Debate', 'activity_form.php', 'activity_form.php', 'ug', '2', '2020-12-25', '2020-12-25 00:00:00', 'N');
 
 -- --------------------------------------------------------
 
@@ -332,12 +347,13 @@ CREATE TABLE `sub_events` (
 --
 
 INSERT INTO `sub_events` (`id`, `event_id`, `name`, `description`, `type`, `status`, `create_date`) VALUES
-(1, 1, 'Quiz', '', 'solo', 'N', '2020-12-23 00:00:00'),
-(2, 2, 'Debate', '', 'group', 'N', '2020-12-23 00:00:00'),
+(1, 1, 'Quiz', 'sdf', 'solo', 'N', '2020-12-23 00:00:00'),
+(2, 2, 'Debate', 'demo', 'group', 'N', '2020-12-23 00:00:00'),
 (3, 6, 'Rangoli', '', 'solo', 'N', '2020-12-23 00:00:00'),
 (4, 4, 'Mimicry', '', 'solo', 'N', '2020-12-23 00:00:00'),
 (5, 5, 'Mime', '', 'solo', 'N', '2020-12-23 00:00:00'),
-(6, 3, 'Mono Acting', '', 'solo', 'N', '2020-12-23 00:00:00');
+(6, 3, 'Mono Acting', '', 'solo', 'N', '2020-12-23 00:00:00'),
+(7, 1, 'demo', 'demo', 'solo', 'Y', '2020-12-25 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -415,37 +431,37 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `coordinators`
 --
 ALTER TABLE `coordinators`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `event_entry`
 --
 ALTER TABLE `event_entry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `event_level`
 --
 ALTER TABLE `event_level`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `post_activity`
 --
 ALTER TABLE `post_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `selection_form`
 --
 ALTER TABLE `selection_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `sub_events`
 --
 ALTER TABLE `sub_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
