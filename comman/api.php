@@ -172,9 +172,19 @@ else if($action == 'save_post_list'){
     $org_by = $_POST['org_by'];
     $level = $_POST['level'];
     $over_all = $_POST['over_all'];
-    $photo = $_FILES["photo"];      
+    $photo = $_FILES["photo"];     
+    $certificate = $_FILES["certificate"];      
+    $proof = $_FILES["proof"];  
+         
     $file_name = $_FILES['photo']['name'];
     $file_tmp =$_FILES['photo']['tmp_name'];
+
+    $cer_file_name = $_FILES['certificate']['name'];
+    $cer_tmp =$_FILES['certificate']['tmp_name'];
+
+    $proof_file_name = $_FILES['proof']['name'];
+    $proof_tmp =$_FILES['proof']['tmp_name'];
+
     $std_reg = $_POST['std_reg'];
     $std_name = $_POST['std_name'];
     $course = $_POST['course'];
@@ -193,8 +203,10 @@ else if($action == 'save_post_list'){
     $sub_event_name = $_POST['sub_event_name'];
     $date = date("yy-m-d");
     move_uploaded_file($file_tmp,"../assets/images/".$file_name);
-    $query = "INSERT INTO `post_activity` (`event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `from_date`, `to_date`, `org_by`, `level`, `over_all`, `photo`, `reg_no`, `name`, `course`, `year`, `coordinator_name`, `created_date`) 
-              VALUES ('$event_name', '$event_id','$sub_event_name','$sub_event_id', '$from',     '$to',   '$org_by ','$level','$over_all','$file_name','$std_reg','$std_name','$course', '$year', '$coordinator_name', '$date');";
+    move_uploaded_file($cer_tmp,"../assets/images/certificate/".$cer_file_name);
+    move_uploaded_file($proof_tmp,"../assets/images/proof/".$proof_file_name);
+    $query = "INSERT INTO `post_activity` (`event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `from_date`, `to_date`, `org_by`, `level`, `over_all`, `photo`, `reg_no`, `name`, `course`, `year`, `coordinator_name`, `created_date`,`proof`,`certificate`) 
+              VALUES ('$event_name', '$event_id','$sub_event_name','$sub_event_id', '$from',     '$to',   '$org_by ','$level','$over_all','$file_name','$std_reg','$std_name','$course', '$year', '$coordinator_name', '$date','$cer_file_name','$proof_file_name');";
     $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
     echo $result;
 }

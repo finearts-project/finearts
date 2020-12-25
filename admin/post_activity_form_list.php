@@ -42,6 +42,8 @@
                             <th>Sub Event</th>
                             <th>Over All</th>
                             <th>Photo</th>
+                            <th>Certificate</th>
+                            <th>Proof</th>
                             <th>Date (yyyy-mm-dd)</th>
                         </tr>
                         </thead>
@@ -55,6 +57,8 @@
                                     <td><?= $addteam['sub_event_name'] ?></td>
                                     <td><?= $addteam['over_all'] ?></td>
                                     <td> <img width="100px"class="img-thumbnail" src="../assets/images/<?= $addteam['photo'] ?>" alt=""> </td>
+                                    <td> <img width="100px"class="img-thumbnail" src="../assets/images/certificate/<?= $addteam['certificate'] ?>" alt=""> </td>
+                                    <td> <img width="100px"class="img-thumbnail" src="../assets/images/proof/<?= $addteam['proof'] ?>" alt=""> </td>
                                     <td><?= $addteam['from_date'] ?></td>
                                 </tr>
                             <?php $i+=1; endforeach ?>

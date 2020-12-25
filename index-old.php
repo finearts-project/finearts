@@ -16,9 +16,9 @@
 <body style="background-color:white!important" class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="javascript:void(0);"> <b> Director</b></a>
+            <a href="javascript:void(0);"> <b> Coordinator</b></a>
         </div>
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded" >
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in </p>
                 <form method="post">
@@ -100,7 +100,7 @@ function login() {
         var data = new FormData();
         data.append("email", $("#email").val());
         data.append("password", $("#password").val());
-        data.append("role", "director");
+        data.append("role", "coordinator");
 
         $.ajax({
             type: "POST",
@@ -117,7 +117,7 @@ function login() {
                     // setInterval(function() {
                     //     $("#alert").hide();
                     // }, 3000);
-                    window.location.href = "event-register.php"
+                    window.location.href = "dashboard.php"
                 }
                 else{
                     $("#login_err").html("Email or Password is Incorrect");

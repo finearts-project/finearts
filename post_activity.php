@@ -161,6 +161,20 @@ $event_levels = get_event_level();?>
                     <span id="sub_event_name_err" style="color:red"></span>
                 </div>
             </div>
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Certificate</label>
+                    <input type="file" class="form-control" name="cerficate" id="cerficate" placeholder="cerficate">
+                    <span id="cerficate_err" style="color:red"></span>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Proof</label>
+                    <input type="file" class="form-control" name="proof" id="proof" placeholder="proof">
+                    <span id="proof_err" style="color:red"></span>
+                </div>
+            </div>
             <div class="col-10" id="radio-section" style="display:none">
                 <div class="form-group">
                     <label for=""> Event Category</label>
@@ -378,6 +392,27 @@ function save_post_list() {
         valid++;
     }
 
+    if ($('#cerficate').val() == '') {
+        $('#cerficate_err').text('Please Certificate');
+        $('#cerficate').css('border-color', 'red');
+        $("#cerficate").focus();
+        return false;
+    } else {
+        $('#cerficate').css('border-color', 'green');
+        $('#cerficate_err').text('');
+        valid++;
+    }
+    if ($('#proof').val() == '') {
+        $('#proof_err').text('Please coordinator name');
+        $('#proof').css('border-color', 'red');
+        $("#proof").focus();
+        return false;
+    } else {
+        $('#proof').css('border-color', 'green');
+        $('#proof_err').text('');
+        valid++;
+    }
+
     var cate = $("input[name='cat']:checked").val();
     if (cate == undefined) {
         $('#cat_err').text('Please choose category');
@@ -397,7 +432,7 @@ function save_post_list() {
     //     $('#sub_event_name_err').text('');
     //     valid++;
     // }
-    if (valid == 13) {
+    if (valid == 15) {
         var data = new FormData();
         data.append("event_id", $("#event_name").val());
         data.append("event_name", $("#event_name  option:selected").text());
@@ -407,6 +442,8 @@ function save_post_list() {
         data.append("level", $("#level").val());
         data.append("over_all", $("#over_all").val());
         data.append("photo",$("#photo").prop('files')[0]);
+        data.append("certificate",$("#cerficate").prop('files')[0]);
+        data.append("proof",$("#proof").prop('files')[0]);
         data.append("std_reg", $("#std_reg").val());
         data.append("std_name", $("#std_name").val());
         data.append("course", $("#course").val());

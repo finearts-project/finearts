@@ -73,7 +73,7 @@
                         </li>
                         <li class="nav-item has-treeview ">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-cubes"></i>
                                 <p>
                                     Student Event List
                                     <i class="right fas fa-angle-left"></i>
@@ -104,7 +104,7 @@
 
                         <li class="nav-item has-treeview ">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-cubes"></i>
                                 <p>
                                     Coordinators
                                     <i class="right fas fa-angle-left"></i>
@@ -128,7 +128,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-cubes"></i>
                                 <p>
                                     Events
                                     <i class="right fas fa-angle-left"></i>
@@ -152,7 +152,7 @@
                         </li>
                         <li class="nav-item has-treeview ">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-cubes"></i>
                                 <p>
                                     Sub Events
                                     <i class="right fas fa-angle-left"></i>
@@ -176,7 +176,7 @@
                         </li>
                         <li class="nav-item has-treeview ">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-cubes"></i>
                                 <p>
                                     Levels
                                     <i class="right fas fa-angle-left"></i>
