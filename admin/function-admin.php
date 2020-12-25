@@ -60,6 +60,18 @@ function get_coordinators(){
     mysqli_close($link);
 }
 
+function get_sub_evnts(){
+    extract($GLOBALS);
+    $query = "SELECT sub_events.*,events.name as evt_name FROM sub_events JOIN events ON events.event_id = sub_events.event_id WHERE sub_events.status = 'N'";
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+    $arr = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $arr[] = $row;
+    }
+    return($arr);
+    mysqli_close($link);
+}
+
 $action = '';
 if (isset($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
@@ -98,6 +110,13 @@ else if($action == 'del_event')
     extract($GLOBALS);
     $id = $_POST['del_id'];
     $query = "UPDATE `events` SET `status` = 'Y' WHERE `event_id` = $id";
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+}
+else if($action == 'del_sub_event')
+{
+    extract($GLOBALS);
+    $id = $_POST['del_id'];
+    $query = "UPDATE `sub_events` SET `status` = 'Y' WHERE `id` = $id";
     $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
 }
 ?>

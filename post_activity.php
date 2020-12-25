@@ -8,7 +8,7 @@ $event_levels = get_event_level();?>
     header("Location: director_login.php");
 }?>
 <div class="container" style="padding:50px">
-    <h3 style="padding-bottom:20px">Activity Form</h3>
+    <h3 style="padding-bottom:20px">Post Activity Form</h3>
     <form method="post">
         <div class="row">
             <div class="col-10">

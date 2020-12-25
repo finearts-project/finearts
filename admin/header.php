@@ -160,13 +160,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/index.php/admin/news" class="nav-link">
+                                    <a href="add-edit-sub-event.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/index.php/admin/view-news" class="nav-link">
+                                    <a href="view-sub-event.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>View</p>
                                     </a>
