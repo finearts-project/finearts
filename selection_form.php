@@ -1,4 +1,6 @@
-<?php include("form_header.php")?>
+<?php session_start(); if(!isset($_SESSION["isLogedin"]) || $_SESSION["isLogedin"] !=true) {
+    header("Location: director_login.php");
+}?><?php include("form_header.php")?>
 <?php include("comman/function.php")?>
 <div class="container" style="padding:50px">
     <h3 style="padding-bottom:20px">Selection Form</h3>

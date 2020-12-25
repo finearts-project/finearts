@@ -18,6 +18,13 @@
 <script src="../assets/plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="../assets/plugins/jquery-validation/additional-methods.min.js"></script>
 <script>
+$("#logout").click(function(){
+    $.post("function-admin.php?action=logout",function(){
+        window.location.href = "index.php";
+    })
+})
+</script>
+<script>
     $(function () {
         // Summernote
         $('.textarea').summernote()

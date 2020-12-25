@@ -18,7 +18,7 @@
         <div class="login-logo">
             <a href="javascript:void(0);"> <b> Coordinator</b></a>
         </div>
-        <div class="card">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in </p>
                 <form method="post">
@@ -46,7 +46,7 @@
                     <div class="row">
                         <!-- /.col -->
                         <div class="col-12">
-                            <button type="button" onclick="return login()" class="btn btn-primary btn-block">Sign
+                            <button type="button" onclick="return login()" class="btn btn-success btn-block">Sign
                                 In</button>
                                 <span id="login_err" style="color: red"></span>
                         </div>

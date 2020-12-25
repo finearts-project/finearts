@@ -35,6 +35,25 @@ function get_evnts(){
     mysqli_close($link);
 }
 
+function get_levels(){
+    extract($GLOBALS);
+    $query = "SELECT * FROM `event_level` WHERE `delete_status` = 'N'";
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+    $arr = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $arr[] = $row;
+    }
+    return($arr);
+    mysqli_close($link);
+}
+
+function check_login(){
+    session_start();
+     if(!isset($_SESSION["isAdminLogedin"]) || $_SESSION["isLogedin"] !=true) {
+        header("Location: index.php");
+     }
+}
+
 
 function get_post_activity_list(){
     extract($GLOBALS);
@@ -88,8 +107,9 @@ if($action == 'admin_login')
     if($result->num_rows > 0)
     {
     $response['status'] = "success";
-    $_SESSION["isLogedin"] = true;
+    $_SESSION["isAdminLogedin"] = true;
     $response['rows'] = $result->num_rows;
+
     }
     else {
         $response['status'] = "fail";
@@ -118,5 +138,17 @@ else if($action == 'del_sub_event')
     $id = $_POST['del_id'];
     $query = "UPDATE `sub_events` SET `status` = 'Y' WHERE `id` = $id";
     $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+}
+
+else if($action == 'del_level')
+{
+    extract($GLOBALS);
+    $id = $_POST['del_id'];
+    $query = "UPDATE `event_level` SET `delete_status` = 'Y' WHERE `id` = $id";
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+}
+else if($action == 'logout'){
+    session_start();
+    session_destroy();    
 }
 ?>

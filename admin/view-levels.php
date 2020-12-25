@@ -2,17 +2,17 @@
      if(!isset($_SESSION["isAdminLogedin"]) || $_SESSION["isAdminLogedin"] !=true) {
         header("Location: index.php");
      }?>
-
 <?php include("header.php")?>
 <?php include("function-admin.php")?>
-<?php $list = get_evnts();?>
+
+<?php $list = get_levels();?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>View Selection Fom List</h1>
+                    <h1>View Levels List</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -37,19 +37,17 @@
                         <thead>
                         <tr>
                             <th>Sino</th>
-                            <th>Event Name</th>
-                            <th>Description</th>
+                            <th>Event Level</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                             <?php $i=1;  foreach($list as $addteam): ?>
                                 <tr>
-                                    <td><?= $i ?></td>
-                                    <td><?= $addteam['name'] ?></td>
-                                    <td><?= $addteam['description'] ?></td>
-                                    <td><a href="add-edit-events.php?edit=<?php echo $addteam['event_id']?>"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                    <a style="color:red" href="javascript:void(0)" onclick="del(<?php echo $addteam['event_id']?>)"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                                    <td><?= $i?></td>
+                                    <td><?= $addteam['level'] ?></td>
+                                    <td><a href="add-edit.levels.php?edit=<?php echo $addteam['id']?>"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <a style="color:red" href="javascript:void(0)" onclick="del(<?php echo $addteam['id']?>)"><i class="fa fa-trash" aria-hidden="true"></i></td>
                                 </tr>
                             <?php $i+=1; endforeach ?>
                         </tfoot>
@@ -73,7 +71,7 @@
 
 function del(id)
 {
-    $.post("function-admin.php?action=del_event",{del_id : id},function(){
+    $.post("function-admin.php?action=del_level",{del_id : id},function(){
         window.location.reload();
     })
 }

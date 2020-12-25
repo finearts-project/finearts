@@ -1,43 +1,41 @@
 <?php  session_start();
      if(!isset($_SESSION["isAdminLogedin"]) || $_SESSION["isAdminLogedin"] !=true) {
         header("Location: index.php");
-     }?>
-
-<?php include("header.php")?>
+     }?><?php include("header.php")?>
 <?php include("function-admin.php")?>
 <?php
  extract($GLOBALS);
     if($_REQUEST['edit']){
         $id = $_REQUEST['edit'];
-        $query = "SELECT * FROM `events` WHERE `event_id` = $id";
+        $query = "SELECT * FROM `event_level` WHERE `id` = $id";
         $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
         $arr = array();
         while ($row = mysqli_fetch_assoc($result)) {
             $arr[] = $row;
         }
         //print_r($arr);exit;
-        $f_name = $arr[0]['name'];
-        $f_desc = $arr[0]['description'];
+        $f_name = $arr[0]['level'];
     }
 
    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-    $ids = $_POST['evt_id'];
-    $ev_name = $_POST['event_name'];
+    $ids = $_POST['level_id'];
+    $level = $_POST['level'];
     $desc = $_POST['desc'];
     if($ids){
-        $query = "UPDATE `events` SET `name` = '$ev_name', `description` = '$desc' WHERE `events`.`event_id` = $ids";
+        $query = "UPDATE `event_level` SET `level` = '$level' WHERE `id` = $ids";
          $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+         header("Location: view-levels.php.php");
     }
     else {
-        $evname = $_POST['event_name'];
-        $desc = $_POST['desc'];
+        $level = $_POST['level'];
+        //$desc = $_POST['desc'];
         $date = date("yy-m-d");
-        $query = "INSERT INTO `events` ( `name`, `description`,  `type`,`create_date`)
-        VALUES ('$evname','$desc',' ','$date')";
+        $query = "INSERT INTO `event_level` ( `level`,`create_date`)
+        VALUES ('$level','$date')";
         $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
         
     }
-    header("Location: view-coordinators.php");
+    header("Location: view-levels.php.php");
   } 
 
   
@@ -80,20 +78,20 @@ function check_null($value)
             <div class="card card-primary">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="quickForm" role="form" method="post" action="add-edit-events.php" accept-charset="utf-8"
+                <form id="quickForm" role="form" method="post" action="add-edit.levels.php" accept-charset="utf-8"
                     enctype="multipart/form-data">
-                    <input type="hidden" name="evt_id" value="<?php echo  check_null($arr[0]["event_id"])?>">
+                    <input type="hidden" name="level_id" value="<?php echo  check_null($arr[0]["id"])?>">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Event Name</label>
+                            <label for="exampleInputPassword1">Level</label>
                             <input type="text" class="form-control" value="<?php echo check_null($f_name)?>"
-                                id="event_name" name="event_name" required placeholder="Enter RegNo">
+                                id="level" name="level" required placeholder="Enter RegNo">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Event Description</label>
+                        <!-- <div class="form-group">
+                            <label for="exampleInputPassword1">Description</label>
                             <input type="text" class="form-control" value="<?php echo check_null($f_desc)?>" id="desc"
                                 name="desc" required placeholder="Enter Description">
-                        </div>
+                        </div> -->
                     </div>
                     <!-- /.card-body -->
 

@@ -184,13 +184,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/index.php/admin/lookingahead" class="nav-link">
+                                    <a href="add-edit.levels.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/index.php/admin/view-lookingahead" class="nav-link">
+                                    <a href="view-levels.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>View</p>
                                     </a>
@@ -198,152 +198,9 @@
                             </ul>
 
                         </li>
-                        <!-- <li class="nav-item has-treeview ">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Resources
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/resources" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/view-resources" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>View</p>
-                                    </a>
-                                </li>
-                            </ul>
 
-                        </li>
-                        <li class="nav-item has-treeview ">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Sainapse Overview
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/sainapse-overview-slider" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Slider</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/view-sainapse-overview-slider" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>View Slider</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li>
-                        <li class="nav-item has-treeview ">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Features
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/features" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/view-features" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>View</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li>
-                        <li class="nav-item has-treeview ">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Sainapse Enterprises
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/sainapseenterprises" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/view-sainapse-enterprises" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>View</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li>
-                        <li class="nav-item has-treeview ">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    LMS
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/view-contact" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Contact List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/view-career" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Career List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/view-sainapse-enquiry" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Sainapse Enquiry</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li>
-                        <li class="nav-item has-treeview ">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Landing Page
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/index.php/admin/Sainapse-solution-brief" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>App Dynamics Integration</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li> -->
                         <li class="nav-item has-treeview">
-                            <a href="/Admin/Login/logout" class="nav-link">
+                            <a href="javascript:void(0)" id="logout" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Logout
