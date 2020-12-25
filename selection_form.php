@@ -141,8 +141,7 @@ function add_student() {
         '  <option value="">[No Sub Events]</option> <option value="1">I</option> <option value="2">II</option> <option value="3">III</option>';
     template += ' </select>';
     template += '   <span id="year_err_' + id_valid + '" style="color:red"></span>';
-    template += ' </div> <span class="del_id_' + id_valid + ' btn btn-sm btn-danger  value="del_id_' + id_valid +
-        '" onclick="del_std(' + id_valid + ')">Delete Student</span>';
+    template += ' </div>';
     template += '  </div> ';
     $("#add-student").append(template);
     localStorage.setItem('id_valid', id_valid);
