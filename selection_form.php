@@ -143,8 +143,8 @@ function add_student() {
     template += '   <span id="year_err_' + id_valid + '" style="color:red"></span>';
     template += ' </div>';
     template += '  </div> <div class="col-10 del_id_' + id_valid +
-        '"> <button type="button" class="btn btn-danger" onclick="del_std(' + id_valid +
-        ')">Delete Student</button></div>';
+        '"> <button type="button" class="btn btn-danger" id="' + id_valid + '"onclick="del_std(' + id_valid +
+        ',this.id)">Delete Student</button></div>';
     $("#add-student").append(template);
     localStorage.setItem('id_valid', id_valid);
     // alert( localStorage.getItem('id_valid'))
@@ -165,7 +165,6 @@ function save_event() {
         return false;
     } else {
         document.getElementById("event_date_err").innerHTML = '';
-        reg_no.push(document.getElementById("event_date").value)
     }
 
     for (i = 1; i <= valid; i++) {
@@ -230,7 +229,7 @@ function save_event() {
         contentType: false,
         success: function(result) {
             if (result) {
-                window.location.href = "activity_form.php";
+                //window.location.href = "activity_form.php";
             } else {
                 $("#login_err").html("Email or Password is Incorrect");
             }
@@ -241,12 +240,14 @@ function save_event() {
 </script>
 
 <script>
-function del_std(id) {
-    $("div").remove(".del_id_" + id);
+function del_std(id, btn_id) {
+    alert(id + ">>>>>" + btn_id);
+    $("div").remove(".del_id_" + btn_id);
     var final = localStorage.getItem('id_valid');
     var new_id;
-    for (var j = id + 1; j <= parseInt(final); j++) {
+    for (var j = parseInt(btn_id) + 1; j <= parseInt(final); j++) {
         new_id = j - 1;
+        $("#" + j).attr('id', new_id)
         $(".del_id_" + j).find("#std_reg_" + j).attr('id', 'std_reg_' + new_id);
         $(".del_id_" + j).find("#reg_no_err_" + j).attr('id', 'reg_no_err_' + new_id);
 

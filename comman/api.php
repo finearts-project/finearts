@@ -61,7 +61,7 @@ else if($action == 'save_event')
     $sub_event_name = $_POST['sub_event_name'];
     $sub_event_id = $_POST['sub_event_id'];
     $type = $_POST['cat'];
-    $date = date("d-m-y");
+    $date = date("y-m-d");
     $query ="INSERT INTO `event_entry` ( `event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `type`, `status`, `create_date`) 
             VALUES ('$event_name', '$event_id', '$sub_event_name ', '$sub_event_id ', ' $type', 'N', '$date');";
     $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
