@@ -8,7 +8,7 @@
 <script>
 $("#logout").click(function(){
     $.post("comman/api.php?action=logout",function(){
-        window.location.href = "director_login.php";
+        window.location.href = "index.php";
     })
 })
 </script>

@@ -2,7 +2,7 @@
 <?php include("comman/function.php")?>
 <?php $events = get_events();?>
 <?php session_start(); if(!isset($_SESSION["isLogedin"]) || $_SESSION["isLogedin"] !=true) {
-    header("Location: director_login.php");
+    header("Location: index.php");
 }?>
 <div class="container" style="padding:50px">
 <h3 style="padding-bottom:20px">Event Entry</h3>

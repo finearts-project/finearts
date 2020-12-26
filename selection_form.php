@@ -1,5 +1,5 @@
 <?php session_start(); if(!isset($_SESSION["isLogedin"]) || $_SESSION["isLogedin"] !=true) {
-    header("Location: director_login.php");
+    header("Location: index.php");
 }?><?php include("form_header.php")?>
 <?php include("comman/function.php")?>
 <div class="container" style="padding:50px">
@@ -103,8 +103,8 @@ function add_student() {
     id_valid = localStorage.getItem('id_valid');
     id_valid++;
     var template = "";
-    template += '<div class="col-10 del_id_' + id_valid + '" >';
-    template += ' <h5>Student ' + id_valid + '</h5>';
+    template += '<div class="col-10 del_id_' + id_valid + '">';
+    template += ' <h5 id="std-count' + id_valid + '">Student ' + id_valid + '</h5>';
     template += ' </div>';
     template += '<div class="col-10 del_id_' + id_valid + '">';
     template += '<div class="form-group">';
@@ -142,26 +142,34 @@ function add_student() {
     template += ' </select>';
     template += '   <span id="year_err_' + id_valid + '" style="color:red"></span>';
     template += ' </div>';
-    template += '  </div> ';
+    template += '  </div> <div class="col-10 del_id_' + id_valid +
+        '"> <button type="button" class="btn btn-danger" onclick="del_std(' + id_valid +
+        ')">Delete Student</button></div>';
     $("#add-student").append(template);
     localStorage.setItem('id_valid', id_valid);
     // alert( localStorage.getItem('id_valid'))
 }
 
-function del_std(id) {
-    alert(id);
-    var myobj = document.getElementsByClassName("del_id_" + id);
-    myobj.remove();
-}
 
 function save_event() {
     var i;
-    var reg_no = [];
     var name = [];
+    var reg_no = [];
     var course = [];
     var year = [];
     var valid = localStorage.getItem('id_valid');
+
+    if (document.getElementById("event_date").value == '') {
+        document.getElementById("event_date_err").innerHTML = 'Please enter the Date';
+        document.getElementById("event_date").focus();
+        return false;
+    } else {
+        document.getElementById("event_date_err").innerHTML = '';
+        reg_no.push(document.getElementById("event_date").value)
+    }
+
     for (i = 1; i <= valid; i++) {
+
         if (document.getElementById("std_reg_" + i).value == '') {
             document.getElementById("reg_no_err_" + i).innerHTML = 'Please enter the student register number';
             document.getElementById("std_reg_" + i).focus();
@@ -170,6 +178,7 @@ function save_event() {
             document.getElementById("reg_no_err_" + i).innerHTML = '';
             reg_no.push(document.getElementById("std_reg_" + i).value)
         }
+
         if (document.getElementById("std_name_" + i).value == '') {
             document.getElementById("name_err_" + i).innerHTML = 'Please enter the student name';
             document.getElementById("std_name_" + i).focus();
@@ -199,34 +208,63 @@ function save_event() {
     name = name.join();
     course = course.join();
     year = year.join();
-    if (parseInt(i) - 1 == parseInt(valid)) {
-        var data = new FormData();
-        data.append("reg_no", reg_no);
-        data.append("event_date", $("#event_date").val());
-        data.append("name", name);
-        data.append("course", course);
-        data.append("year", year);
-        data.append("event_id", $("#event_name").val());
-        data.append("sub_event_id", $("#sub_event_name").val());
-        data.append("event_name", $('#event_name  option:selected').text());
-        data.append("sub_event_name", $('#sub_event_name  option:selected').text());
+    //if (parseInt(i) - 1 == parseInt(valid)) {
+    var data = new FormData();
+    data.append("reg_no", reg_no);
+    data.append("event_date", $("#event_date").val());
+    data.append("name", name);
+    data.append("course", course);
+    data.append("year", year);
+    data.append("event_id", $("#event_name").val());
+    data.append("sub_event_id", $("#sub_event_name").val());
+    data.append("event_name", $('#event_name  option:selected').text());
+    data.append("sub_event_name", $('#sub_event_name  option:selected').text());
 
-        $.ajax({
-            type: "POST",
-            async: false,
-            url: 'comman/api.php?action=save_students_event',
-            data: data,
-            cache: false,
-            processData: false, // important
-            contentType: false,
-            success: function(result) {
-                if (result) {
-                    window.location.href = "activity_form.php";
-                } else {
-                    $("#login_err").html("Email or Password is Incorrect");
-                }
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: 'comman/api.php?action=save_students_event',
+        data: data,
+        cache: false,
+        processData: false, // important
+        contentType: false,
+        success: function(result) {
+            if (result) {
+                window.location.href = "activity_form.php";
+            } else {
+                $("#login_err").html("Email or Password is Incorrect");
             }
-        });
+        }
+    });
+    //   }
+}
+</script>
+
+<script>
+function del_std(id) {
+    $("div").remove(".del_id_" + id);
+    var final = localStorage.getItem('id_valid');
+    var new_id;
+    for (var j = id + 1; j <= parseInt(final); j++) {
+        new_id = j - 1;
+        $(".del_id_" + j).find("#std_reg_" + j).attr('id', 'std_reg_' + new_id);
+        $(".del_id_" + j).find("#reg_no_err_" + j).attr('id', 'reg_no_err_' + new_id);
+
+        $(".del_id_" + j).find("#std_name_" + j).attr('id', 'std_name_' + new_id);
+        $(".del_id_" + j).find("#name_err_" + j).attr('id', 'name_err_' + new_id);
+
+        $(".del_id_" + j).find("#course_" + j).attr('id', 'course_' + new_id);
+        $(".del_id_" + j).find("#course_err_" + j).attr('id', 'course_err_' + new_id);
+
+        $(".del_id_" + j).find("#year_" + j).attr('id', 'year_' + new_id);
+        $(".del_id_" + j).find("#year_err_" + j).attr('id', 'year_err_' + new_id);
+
+        $(".del_id_" + j).addClass("del_id_" + new_id);
+        $(".del_id_" + new_id).removeClass("del_id_" + j);
+
+        $("#std-count" + j).html("Student " + new_id);
     }
+    final--;
+    localStorage.setItem('id_valid', final);
 }
 </script>
