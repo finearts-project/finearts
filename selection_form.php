@@ -143,7 +143,7 @@ function add_student() {
     template += '   <span id="year_err_' + id_valid + '" style="color:red"></span>';
     template += ' </div>';
     template += '  </div> <div class="col-10 del_id_' + id_valid +
-        '"> <button type="button" class="btn btn-danger" id="' + id_valid + '"onclick="del_std(' + id_valid +
+        '"> <button type="button" style="margin-bottom: 30px;"class="btn btn-danger" id="' + id_valid + '"onclick="del_std(' + id_valid +
         ',this.id)">Delete Student</button></div>';
     $("#add-student").append(template);
     localStorage.setItem('id_valid', id_valid);
@@ -241,7 +241,6 @@ function save_event() {
 
 <script>
 function del_std(id, btn_id) {
-    alert(id + ">>>>>" + btn_id);
     $("div").remove(".del_id_" + btn_id);
     var final = localStorage.getItem('id_valid');
     var new_id;
