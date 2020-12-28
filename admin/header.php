@@ -36,6 +36,9 @@
     :not(.layout-fixed) .main-sidebar {
         background: #283655;
     }
+    body{
+        background-color : white;
+    }
     </style>
 </head>
 
@@ -62,8 +65,8 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
-                            <a href="/index.php/admin/dashboard.php" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <a href="dashboard.php" class="nav-link">
+                                <i class="nav-icon fa fa-bar-chart"></i>
                                 <p>
                                     Dashboard
                                     <i class="right fas "></i>
@@ -201,7 +204,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="javascript:void(0)" id="logout" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fa fa fa-sign-out""></i>
                                 <p>
                                     Logout
                                     <i class="right fas "></i>

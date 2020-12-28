@@ -10,12 +10,13 @@ $event_levels = get_event_level();?>
     <div class="container">
         <form method="post">
             <div class="row justify-content-center">
-                <div class="col-sm-10 card-header bg-success text-white text-center ">
+                <div class="col-sm-6 card-header bg-success text-white text-center ">
                     <h3 style="padding-bottom:20px">Activity Form</h3>
                 </div>
             </div>
+            <!-- <div class="row justify-content-center"> -->
             <div class="row justify-content-center">
-                <div class="col-sm-10">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label>Name of the program</label>
                         <input type="text" class="form-control is-invalid" name="programe_name" id="programe_name"
@@ -23,7 +24,9 @@ $event_levels = get_event_level();?>
                         <span id="programe_name_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center ">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Level of the Event</label>
                         <select name="level" class="form-control is-invalid" id="level">
@@ -35,7 +38,9 @@ $event_levels = get_event_level();?>
                         <span id="level_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Venue</label>
                         <textarea class="form-control is-invalid" name="venue" id="venue"
@@ -43,24 +48,32 @@ $event_levels = get_event_level();?>
                         <span id="venue_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <h4>Date:</h4>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">From</label>
                         <input type="text" class="form-control is-invalid" name="from" id="from" placeholder="From">
                         <span id="from_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">To</label>
                         <input type="text" class="form-control is-invalid" name="to" id="to" placeholder="To">
                         <span id="to_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Coordinator Name</label>
                         <select name="coordinator_name" class="form-control is-invalid" id="coordinator_name">
@@ -72,7 +85,9 @@ $event_levels = get_event_level();?>
                         <span id="coordinator_name_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Event Organaized By</label>
                         <input type="text" class="form-control is-invalid" name="org_by" id="org_by"
@@ -80,7 +95,9 @@ $event_levels = get_event_level();?>
                         <span id="org_by_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Event Name</label>
                         <select name="event_name" class="form-control is-invalid" id="event_name">
@@ -92,7 +109,9 @@ $event_levels = get_event_level();?>
                         <span id="event_name_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10" id="radio-section" style="display:none">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6" id="radio-section" style="display:none">
                     <div class="form-group">
                         <label for=""> Event Category</label>
                         <div class="form-check">
@@ -110,7 +129,9 @@ $event_levels = get_event_level();?>
                         <span id="cat_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Sub Events</label>
                         <select name="sub_event_name" class="form-control is-invalid" id="sub_event_name">
@@ -119,18 +140,23 @@ $event_levels = get_event_level();?>
                         <span id="sub_event_name_err" style="color:red"></span>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <table class=" table table-bordered table-striped" id="Student_list">
                     </table>
                 </div>
+                </div>
 
-            </div>
+            <!-- </div> -->
+            <!-- <div class="row justify-content-center"> -->
             <div class="row justify-content-center">
-                <div class="col-sm-10 ">
+                <div class="col-sm-6 ">
                     <button type="button" onclick="return save_full_list()" class="btn btn-outline-warning">Save &
                         Next</button>
                 </div>
-            </div>
+                </div>  
+            <!-- </div> -->
         </form>
     </div>
 </div>

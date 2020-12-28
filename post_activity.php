@@ -8,13 +8,17 @@ $event_levels = get_event_level();?>
     header("Location: index.php");
 }?>
 <div class="container" style="padding:50px">
-    <h3 style="padding-bottom:20px">Post Activity Form</h3>
     <form method="post">
-        <div class="row">
-            <div class="col-10">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 card-header bg-success text-white text-center ">
+                <h3 style="padding-bottom:20px">Post Activity Form</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Event Name</label>
-                    <select name="event_name" class="form-control" id="event_name">
+                    <select name="event_name" class="form-control is-invalid" id="event_name">
                         <option value="">[select]</option>
                         <?php foreach($events as $event) {?>
                         <option value="<?php echo $event['event_id']?>"><?php echo $event['name']?></option>
@@ -23,34 +27,44 @@ $event_levels = get_event_level();?>
                     <span id="event_name_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <h4>Date:</h4>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">From</label>
-                    <input type="text" class="form-control" name="from" id="from" placeholder="From">
+                    <input type="text" class="form-control is-invalid" name="from" id="from" placeholder="From">
                     <span id="from_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">To</label>
-                    <input type="text" class="form-control" name="to" id="to" placeholder="To">
+                    <input type="text" class="form-control is-invalid" name="to" id="to" placeholder="To">
                     <span id="to_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Event Organaized By</label>
-                    <input type="text" class="form-control" name="org_by" id="org_by" placeholder="Event Organaized By">
+                    <input type="text" class="form-control is-invalid" name="org_by" id="org_by" placeholder="Event Organaized By">
                     <span id="org_by_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Level of the Event</label>
-                    <select name="level" class="form-control" id="level">
+                    <select name="level" class="form-control is-invalid" id="level">
                         <option value="">[select]</option>
                         <?php foreach($event_levels as $event_level) {?>
                         <option value="<?php echo $event_level['level']?>"><?php echo $event_level['level']?></option>
@@ -59,11 +73,13 @@ $event_levels = get_event_level();?>
                     <span id="level_err" style="color:red"></span>
                 </div>
             </div>
+        </div>
+        <div class="row justify-content-center">
 
-            <div class="col-10">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label>Over All Winning</label>
-                    <select type="text" class="form-control" name="over_all" id="over_all">
+                    <select type="text" class="form-control is-invalid" name="over_all" id="over_all">
                         <option value="">[select]</option>
                         <option value="winner">Winner</option>
                         <option value="runner">Runner</option>
@@ -72,36 +88,44 @@ $event_levels = get_event_level();?>
                     <span id="over_all_err" style="color:red"></span>
                 </div>
             </div>
-
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Photo</label>
-                    <input type="file" class="form-control" name="photo" id="photo" placeholder="Photo">
+                    <input type="file" class="form-control is-invalid" name="photo" id="photo" placeholder="Photo">
                     <span id="photo_err" style="color:red"></span>
                 </div>
             </div>
-
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <h3> Student Profile</h3>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Register Number</label>
-                    <input type="text" class="form-control" name="std_reg" id="std_reg" placeholder="Register Number">
+                    <input type="text" class="form-control is-invalid" name="std_reg" id="std_reg" placeholder="Register Number">
                     <span id="reg_no_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Name</label>
-                    <input type="text" name="std_name" id="std_name" class="form-control" placeholder="Name">
+                    <input type="text" name="std_name" id="std_name" class="form-control is-invalid" placeholder="Name">
                     <span id="name_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Course</label>
-                    <select name="course" class="form-control" id="course">
+                    <select name="course" class="form-control is-invalid" id="course">
                         <option value="">[No Sub Events]</option>
                         <option value="ug">UG</option>
                         <option value="pg">PG</option>
@@ -109,10 +133,13 @@ $event_levels = get_event_level();?>
                     <span id="course_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">year</label>
-                    <select name="year" class="form-control" id="year">
+                    <select name="year" class="form-control is-invalid" id="year">
                         <option value="">[No Sub Events]</option>
                         <option value="1">I</option>
                         <option value="2">II</option>
@@ -121,10 +148,12 @@ $event_levels = get_event_level();?>
                     <span id="year_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Coordinator Name</label>
-                    <select name="coordinator_name" class="form-control" id="coordinator_name">
+                    <select name="coordinator_name" class="form-control is-invalid" id="coordinator_name">
                         <option value="">[select]</option>
                         <?php foreach($coordinators as $coordinator) {?>
                         <option value="<?php echo $coordinator['name']?>"><?php echo $coordinator['name']?></option>
@@ -133,49 +162,9 @@ $event_levels = get_event_level();?>
                     <span id="coordinator_name_err" style="color:red"></span>
                 </div>
             </div>
-
-            <div class="col-10" id="radio-section" style="display:none">
-                <div class="form-group">
-                    <label for=""> Event Category</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cat" value="solo">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Solo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cat" value="group">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Group
-                        </label>
-                    </div>
-                    <span id="cat_err" style="color:red"></span>
-                </div>
-            </div>
-            <div class="col-10">
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Sub Events</label>
-                    <select name="sub_event_name" class="form-control" id="sub_event_name">
-                        <option value="">[No Sub Events]</option>
-                    </select>
-                    <span id="sub_event_name_err" style="color:red"></span>
-                </div>
-            </div>
-            <div class="col-10">
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Certificate</label>
-                    <input type="file" class="form-control" name="cerficate" id="cerficate" placeholder="cerficate">
-                    <span id="cerficate_err" style="color:red"></span>
-                </div>
-            </div>
-            <div class="col-10">
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Proof</label>
-                    <input type="file" class="form-control" name="proof" id="proof" placeholder="proof">
-                    <span id="proof_err" style="color:red"></span>
-                </div>
-            </div>
-            <div class="col-10" id="radio-section" style="display:none">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6" id="radio-section" style="display:none">
                 <div class="form-group">
                     <label for=""> Event Category</label>
                     <div class="form-check">
@@ -194,8 +183,58 @@ $event_levels = get_event_level();?>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-10">
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Sub Events</label>
+                    <select name="sub_event_name" class="form-control is-invalid" id="sub_event_name">
+                        <option value="">[No Sub Events]</option>
+                    </select>
+                    <span id="sub_event_name_err" style="color:red"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Certificate</label>
+                    <input type="file" class="form-control is-invalid" name="cerficate" id="cerficate" placeholder="cerficate">
+                    <span id="cerficate_err" style="color:red"></span>
+                </div>
+            </div>\
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Proof</label>
+                    <input type="file" class="form-control is-invalid" name="proof" id="proof" placeholder="proof">
+                    <span id="proof_err" style="color:red"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6" id="radio-section" style="display:none">
+                <div class="form-group">
+                    <label for=""> Event Category</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cat" value="solo">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Solo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cat" value="group">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Group
+                        </label>
+                    </div>
+                    <span id="cat_err" style="color:red"></span>
+                </div>
+            </div>\
+        </div>
+        <!-- </div> -->
+        <div class="row  justify-content-center">
+            <div class="col-sm-6">
                 <button type="button" onclick="return save_post_list()" class="btn btn-primary">Save & Next</button>
             </div>
         </div>
@@ -441,9 +480,9 @@ function save_post_list() {
         data.append("org_by", $("#org_by").val());
         data.append("level", $("#level").val());
         data.append("over_all", $("#over_all").val());
-        data.append("photo",$("#photo").prop('files')[0]);
-        data.append("certificate",$("#cerficate").prop('files')[0]);
-        data.append("proof",$("#proof").prop('files')[0]);
+        data.append("photo", $("#photo").prop('files')[0]);
+        data.append("certificate", $("#cerficate").prop('files')[0]);
+        data.append("proof", $("#proof").prop('files')[0]);
         data.append("std_reg", $("#std_reg").val());
         data.append("std_name", $("#std_name").val());
         data.append("course", $("#course").val());
@@ -467,4 +506,26 @@ function save_post_list() {
         });
     }
 }
+</script>
+
+<script>
+$("input[type='text']").keyup(function() {
+    if ($(this).val() != '') {
+        $(this).removeClass('is-invalid');
+        $(this).addClass('is-valid');
+    } else {
+        $(this).addClass('is-invalid');
+        $(this).removeClass('is-valid');
+    }
+})
+
+$("select,#cerficate,#proof").change(function() {
+    if ($(this).val() != '') {
+        $(this).removeClass('is-invalid');
+        $(this).addClass('is-valid');
+    } else {
+        $(this).addClass('is-invalid');
+        $(this).removeClass('is-valid');
+    }
+})
 </script>

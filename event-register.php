@@ -4,54 +4,69 @@
 <?php session_start(); if(!isset($_SESSION["isLogedin"]) || $_SESSION["isLogedin"] !=true) {
     header("Location: index.php");
 }?>
-<div class="container" style="padding:50px">
-<h3 style="padding-bottom:20px">Event Entry</h3>
-    <form>
-        <div class="row">
-            <div class="col-10">
-                <div class="form-group">
-                    <label>Event Name</label>
-                    <select name="event_name" class="form-control" id="event_name">
-                        <option value="">[select]</option>
-                        <?php foreach($events as $event) {?>
-                        <option value="<?php echo $event['event_id']?>"><?php echo $event['name']?></option>
-                        <?php }?>
-                    </select>
-                    <span id="event_name_err" style="color:red"></span>
+<div class="container-fluid" style="padding:50px">
+    <div class="container">
+
+        <form method="post">
+            <div class="row justify-content-center">
+                <div class="card-header bg-success text-white text-center col-sm-6">
+                    <h3 style="padding-bottom:20px">Event Entry</h3>
                 </div>
             </div>
-            <div class="col-10" id="radio-section" style="display:none">
-                <div class="form-group">
-                    <label for=""> Event Category</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cat" value="solo">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Solo
-                        </label>
+            <div class="row  justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Event Name</label>
+                        <select name="event_name" class="form-control" id="event_name">
+                            <option value="">[select]</option>
+                            <?php foreach($events as $event) {?>
+                            <option value="<?php echo $event['event_id']?>"><?php echo $event['name']?></option>
+                            <?php }?>
+                        </select>
+                        <span id="event_name_err" style="color:red"></span>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="cat" value="group">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Group
-                        </label>
+                </div>
+            </div>
+
+            <div class="row  justify-content-center">
+                <div class="col-sm-6" id="radio-section" style="display:none">
+                    <div class="form-group">
+                        <label for=""> Event Category</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cat" value="solo">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Solo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cat" value="group">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Group
+                            </label>
+                        </div>
+                        <span id="cat_err" style="color:red"></span>
                     </div>
-                    <span id="cat_err" style="color:red"></span>
                 </div>
             </div>
-            <div class="col-10">
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Sub Events</label>
-                    <select name="sub_event_name" class="form-control" id="sub_event_name">
-                        <option value="">[No Sub Events]</option>
-                    </select>
-                    <span id="sub_event_name_err" style="color:red"></span>
+            <div class="row  justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Sub Events</label>
+                        <select name="sub_event_name" class="form-control" id="sub_event_name">
+                            <option value="">[No Sub Events]</option>
+                        </select>
+                        <span id="sub_event_name_err" style="color:red"></span>
+                    </div>
                 </div>
             </div>
-            <div class="col-10">
-                <button type="button" onclick="return save_event()" class="btn btn-primary">Save & Next</button>
+            <div class="row  justify-content-center">
+                <div class="col-sm-6">
+                    <button type="button" onclick="return save_event()" class="btn btn-outline-warning">Save & Next</button>
+                </div>
             </div>
-        </div>
+    </div>
     </form>
+</div>
 </div>
 <?php include("form_footer.php")?>
 <script>
@@ -143,23 +158,23 @@ function save_event() {
 
         var data = new FormData();
         var event_name = $("#event_name").val();
-            data.append("event_id", $("#event_name").val());
-            data.append("cat", $("input[name='cat']:checked").val());
-            data.append("sub_event_id", $("#sub_event_name").val());
-            data.append("event_name",  $('#event_name  option:selected').text());
-            data.append("sub_event_name",  $('#sub_event_name  option:selected').text());
-            $.ajax({
-                type: "POST",
-                async: false,
-                url: 'comman/api.php?action=save_event',
-                data: data,
-                cache: false,
-                processData: false, // important
-                contentType: false,
-                success: function(result) {
-                    window.location.href="selection_form.php";
-                }
-            });
-        }
+        data.append("event_id", $("#event_name").val());
+        data.append("cat", $("input[name='cat']:checked").val());
+        data.append("sub_event_id", $("#sub_event_name").val());
+        data.append("event_name", $('#event_name  option:selected').text());
+        data.append("sub_event_name", $('#sub_event_name  option:selected').text());
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: 'comman/api.php?action=save_event',
+            data: data,
+            cache: false,
+            processData: false, // important
+            contentType: false,
+            success: function(result) {
+                window.location.href = "selection_form.php";
+            }
+        });
     }
+}
 </script>
