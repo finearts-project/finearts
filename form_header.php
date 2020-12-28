@@ -51,7 +51,34 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav ">
+                <li class="nav-item">
+                                    <a class="nav-link" href="collegetype.php">College Type</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="deptdetail.php">Department</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="coursedetail.php">Course</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="classdetail.php">Class</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="subjectdetail.php">Subject</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="teachingtool.php">Teaching Tool</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="partmaster.php">Part Master</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="rolemaster.php">Role Master</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cocoordinatorform.php">Co-Coordinator</a>
+                                </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="post_activity.php"> <b> Post Activity</b></a>
                     </li>
