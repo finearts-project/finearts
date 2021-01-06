@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 25, 2020 at 03:23 PM
+-- Generation Time: Jan 06, 2021 at 08:15 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.4.13
 
@@ -79,6 +79,8 @@ CREATE TABLE `coordinators` (
   `coordinator_reg_no` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
   `designation` text,
+  `department` varchar(100) NOT NULL,
+  `shift` varchar(100) NOT NULL,
   `delete_status` enum('Y','N') NOT NULL DEFAULT 'N',
   `create_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -87,8 +89,9 @@ CREATE TABLE `coordinators` (
 -- Dumping data for table `coordinators`
 --
 
-INSERT INTO `coordinators` (`id`, `coordinator_reg_no`, `name`, `designation`, `delete_status`, `create_date`) VALUES
-(1, ' demo', ' demo', ' zdf', 'N', '2020-12-25 00:00:00');
+INSERT INTO `coordinators` (`id`, `coordinator_reg_no`, `name`, `designation`, `department`, `shift`, `delete_status`, `create_date`) VALUES
+(1, ' demo', ' demo', ' zdf', '', '', 'Y', '2020-12-25 00:00:00'),
+(2, ' ', ' Pradeep', ' Bord Member', 'IT', 'Day', 'N', '2121-01-06 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -139,6 +142,16 @@ CREATE TABLE `event_entry` (
   `status` enum('Y','N') NOT NULL DEFAULT 'N',
   `create_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `event_entry`
+--
+
+INSERT INTO `event_entry` (`id`, `event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `type`, `status`, `create_date`) VALUES
+(1, 'vocal', '1', ' ', 'null ', ' solo', 'N', '2025-12-20 00:00:00'),
+(2, 'vocal', '1', ' ', 'null ', ' solo', 'N', '2026-12-20 00:00:00'),
+(3, 'vocal', '1', ' ', 'null ', ' solo', 'N', '2020-12-26 00:00:00'),
+(4, 'vocal', '1', 'demo23 ', '3 ', ' solo', 'N', '2020-12-27 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -200,6 +213,27 @@ INSERT INTO `post_activity` (`id`, `event_name`, `event_id`, `sub_event_name`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `selectionform`
+--
+
+CREATE TABLE `selectionform` (
+  `id` int(11) NOT NULL,
+  `event_id` varchar(10) DEFAULT NULL,
+  `sub_event_id` varchar(10) DEFAULT NULL,
+  `event_name` varchar(200) NOT NULL,
+  `sub_event_name` varchar(200) NOT NULL,
+  `register_no` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `course` varchar(50) NOT NULL,
+  `year` varchar(50) NOT NULL,
+  `event_date` date DEFAULT NULL,
+  `create_date` datetime NOT NULL,
+  `delete_status` enum('Y','N') NOT NULL DEFAULT 'N'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `selection_form`
 --
 
@@ -218,6 +252,27 @@ CREATE TABLE `selection_form` (
   `delete_status` enum('Y','N') NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `selection_form`
+--
+
+INSERT INTO `selection_form` (`id`, `event_id`, `sub_event_id`, `event_name`, `sub_event_name`, `register_no`, `name`, `course`, `year`, `event_date`, `create_date`, `delete_status`) VALUES
+(1, '1', 'null', 'vocal', '', 'dfh', 'dfgh', 'ug', '1', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(2, '1', 'null', 'vocal', '', 'test', 'activity_form.php', 'ug', '1', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(3, '1', 'null', 'vocal', '', 'test', 'asdasd', 'pg', '2', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(4, '1', 'null', 'vocal', '', 'gfjh', 'ghj', 'ug', '1', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(5, '1', '3', 'vocal', 'demo23', 'a', 'dfgh', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(6, '1', '3', 'vocal', 'demo23', 'activity_form.php', 'activity_form.php', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(7, '1', '3', 'vocal', 'demo23', 'Z', 'zxc', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(8, '1', '3', 'vocal', 'demo23', 'a', 'dfgh', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(9, '1', '3', 'vocal', 'demo23', 'activity_form.php', 'activity_form.php', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(10, '1', '3', 'vocal', 'demo23', 'Z', 'zxc', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(11, '1', '3', 'vocal', 'demo23', 'a', 'ï¸ jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(12, '1', '3', 'vocal', 'demo23', 'a', 'ï¸ jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(13, '1', '3', 'vocal', 'demo23', 'a', 'jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(14, '3', '3', 'Instrumantal', 'demo23', 'a', 'jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(15, '1', '1', 'vocal', 'demo', 'test', 'test', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N');
+
 -- --------------------------------------------------------
 
 --
@@ -233,6 +288,15 @@ CREATE TABLE `sub_events` (
   `status` enum('Y','N') NOT NULL DEFAULT 'N',
   `create_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sub_events`
+--
+
+INSERT INTO `sub_events` (`id`, `event_id`, `name`, `description`, `type`, `status`, `create_date`) VALUES
+(1, 1, 'demo', 'we', 'group', 'N', '2020-12-27 00:00:00'),
+(2, 1, 'demo2', '2', 'group', 'N', '2020-12-27 00:00:00'),
+(3, 1, 'demo23', 'demo', 'solo', 'N', '2020-12-27 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -310,7 +374,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `coordinators`
 --
 ALTER TABLE `coordinators`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `events`
 --
@@ -320,7 +384,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `event_entry`
 --
 ALTER TABLE `event_entry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `event_level`
 --
@@ -335,12 +399,12 @@ ALTER TABLE `post_activity`
 -- AUTO_INCREMENT for table `selection_form`
 --
 ALTER TABLE `selection_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `sub_events`
 --
 ALTER TABLE `sub_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
