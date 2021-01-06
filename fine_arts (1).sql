@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 06, 2021 at 08:15 PM
+-- Generation Time: Jan 06, 2021 at 08:59 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.4.13
 
@@ -193,6 +193,8 @@ CREATE TABLE `post_activity` (
   `photo` text NOT NULL,
   `certificate` varchar(100) NOT NULL,
   `proof` varchar(100) NOT NULL,
+  `media` varchar(100) NOT NULL,
+  `video` varchar(100) NOT NULL,
   `reg_no` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `course` varchar(100) NOT NULL,
@@ -205,10 +207,20 @@ CREATE TABLE `post_activity` (
 -- Dumping data for table `post_activity`
 --
 
-INSERT INTO `post_activity` (`id`, `event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `from_date`, `to_date`, `org_by`, `level`, `over_all`, `photo`, `certificate`, `proof`, `reg_no`, `name`, `course`, `year`, `coordinator_name`, `created_date`) VALUES
-(1, 'vocal', '1', '', '', '2020-12-19', '2020-12-25', 'Activity Form ', 'inter', 'winner', 'zero-time.png', 'sport-problem.png', 'Reduction-in-time-new.png', 'dfg', 'dfg', 'pg', '1', ' demo', '2020-12-25'),
-(2, 'Dance', '2', '', '', '2020-12-25', '2020-12-25', 'Activity Form ', 'inter', 'winner', 'Accurate.png', 'Accurate.png', 'Accurate.png', 'dfg', 'dfg', 'ug', '1', ' demo', '2020-12-25'),
-(3, 'vocal', '1', '', '', '2020-12-24', '2020-12-25', 'zsxd ', 'inter', 'winner', 'Reduction-in-time-new.png', 'Reduction-in-time-new.png', 'Reduction-in-time-new.png', 'dfg', 'dfg', 'ug', '1', ' demo', '2020-12-25');
+INSERT INTO `post_activity` (`id`, `event_name`, `event_id`, `sub_event_name`, `sub_event_id`, `from_date`, `to_date`, `org_by`, `level`, `over_all`, `photo`, `certificate`, `proof`, `media`, `video`, `reg_no`, `name`, `course`, `year`, `coordinator_name`, `created_date`) VALUES
+(1, 'vocal', '1', '', '', '2020-12-19', '2020-12-25', 'Activity Form ', 'inter', 'winner', 'zero-time.png', 'sport-problem.png', 'Reduction-in-time-new.png', '', '', 'dfg', 'dfg', 'pg', '1', ' demo', '2020-12-25'),
+(2, 'Dance', '2', '', '', '2020-12-25', '2020-12-25', 'Activity Form ', 'inter', 'winner', 'Accurate.png', 'Accurate.png', 'Accurate.png', '', '', 'dfg', 'dfg', 'ug', '1', ' demo', '2020-12-25'),
+(3, 'vocal', '1', '', '', '2020-12-24', '2020-12-25', 'zsxd ', 'inter', 'winner', 'Reduction-in-time-new.png', 'Reduction-in-time-new.png', 'Reduction-in-time-new.png', '', '', 'dfg', 'dfg', 'ug', '1', ' demo', '2020-12-25'),
+(4, 'vocal', '1', 'demo23', '', '2020-12-01', '2021-01-28', 'xcv ', 'inter', 'winner', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-06 17-38-21.png', 'Screenshot from 2021-01-06 17-38-21.png', 'Screenshot from 2021-01-06 17-38-21.png', 'Screenshot from 2021-01-06 17-38-21.png', 'dfg', 'dfg', 'ug', '1', ' Pradeep', '2121-01-06'),
+(5, 'Litral Event', '5', '', '', '2021-01-31', '2021-01-20', 'Deleniti non nulla e ', 'inter', 'runner', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-05 12-14-05.png', 'Screenshot from 2021-01-06 17-38-21.png', 'Screenshot from 2021-01-06 17-38-21.png', 'Screenshot from 2021-01-06 17-38-21.png', 'Pariatur Provident ', 'Hop Gregory ', 'ug', '2', ' Pradeep', '2121-01-06'),
+(6, 'vocal', '1', 'demo', '', '2021-01-25', '2021-01-27', 'Quia obcaecati quia  ', 'inter', 'runner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Voluptatibus ut ad c', 'Kimberley Mccall', 'pg', '2', ' Pradeep', '2121-01-06'),
+(7, 'vocal', '1', '', '', '2021-01-25', '2021-01-27', 'Quia obcaecati quia  ', 'inter', 'runner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Voluptatibus ut ad c', 'Kimberley Mccall', 'pg', '2', ' Pradeep', '2121-01-06'),
+(8, 'vocal', '1', '', '', '2021-01-25', '2021-01-27', 'Quia obcaecati quia  ', 'inter', 'runner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Voluptatibus ut ad c', 'Kimberley Mccall', 'pg', '2', ' Pradeep', '2121-01-06'),
+(9, 'vocal', '1', '', '', '2021-01-25', '2021-01-27', 'Quia obcaecati quia  ', 'inter', 'runner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Voluptatibus ut ad c', 'Kimberley Mccall', 'pg', '2', ' Pradeep', '2121-01-06'),
+(10, 'vocal', '1', '', '', '2021-01-25', '2021-01-27', 'Quia obcaecati quia  ', 'inter', 'runner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Voluptatibus ut ad c', 'Kimberley Mccall', 'pg', '2', ' Pradeep', '2121-01-06'),
+(11, 'vocal', '1', '', '', '2021-01-25', '2021-01-27', 'Quia obcaecati quia  ', 'inter', 'runner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 12-15-21.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Screenshot from 2021-01-05 16-32-16.png', 'Voluptatibus ut ad c', 'Kimberley Mccall', 'pg', '2', ' Pradeep', '2121-01-06'),
+(12, 'vocal', '1', 'demo23', '', '2021-01-31', '2021-01-25', 'Est fuga Itaque to ', 'inter', 'winner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Ad amet hic ut aliq', 'Denton Frazier', 'ug', '2', ' Pradeep', '2121-01-06'),
+(13, 'vocal', '1', '', '', '2021-01-31', '2021-01-25', 'Est fuga Itaque to ', 'inter', 'winner', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 22-05-41.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Screenshot from 2021-01-05 21-51-16.png', 'Ad amet hic ut aliq', 'Denton Frazier', 'ug', '2', ' Pradeep', '2121-01-06');
 
 -- --------------------------------------------------------
 
@@ -394,7 +406,7 @@ ALTER TABLE `event_level`
 -- AUTO_INCREMENT for table `post_activity`
 --
 ALTER TABLE `post_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `selection_form`
 --

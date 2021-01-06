@@ -117,7 +117,7 @@ function login() {
                     // setInterval(function() {
                     //     $("#alert").hide();
                     // }, 3000);
-                    window.location.href = "event-register.php"
+                    window.location.href = "selection_form.php"
                 }
                 else{
                     $("#login_err").html("Email or Password is Incorrect");

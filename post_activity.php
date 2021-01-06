@@ -201,13 +201,31 @@ $event_levels = get_event_level();?>
                     <input type="file" class="form-control is-invalid" name="cerficate" id="cerficate" placeholder="cerficate">
                     <span id="cerficate_err" style="color:red"></span>
                 </div>
-            </div>\
+            </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-sm-6">
                 <div class="form-group">
                     <label for="exampleInputPassword1">Proof</label>
                     <input type="file" class="form-control is-invalid" name="proof" id="proof" placeholder="proof">
+                    <span id="proof_err" style="color:red"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Media</label>
+                    <input type="file" class="form-control is-invalid" name="proof2" id="proof2" placeholder="proof">
+                    <span id="proof_err" style="color:red"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Video</label>
+                    <input type="file" class="form-control is-invalid" name="proof3" id="proof3" placeholder="proof">
                     <span id="proof_err" style="color:red"></span>
                 </div>
             </div>
@@ -483,6 +501,8 @@ function save_post_list() {
         data.append("photo", $("#photo").prop('files')[0]);
         data.append("certificate", $("#cerficate").prop('files')[0]);
         data.append("proof", $("#proof").prop('files')[0]);
+        data.append("proof2", $("#proof2").prop('files')[0]);
+        data.append("proof3", $("#proof3").prop('files')[0]);
         data.append("std_reg", $("#std_reg").val());
         data.append("std_name", $("#std_name").val());
         data.append("course", $("#course").val());
@@ -501,7 +521,7 @@ function save_post_list() {
             contentType: false,
             success: function(result) {
                 $("#sub_event_name").html(result);
-                window.location.reload();
+                //window.location.reload();
             }
         });
     }

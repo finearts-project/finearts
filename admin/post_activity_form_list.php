@@ -44,6 +44,8 @@
                             <th>Photo</th>
                             <th>Certificate</th>
                             <th>Proof</th>
+                            <th>Media</th>
+                            <th>Video</th>
                             <th>Date (yyyy-mm-dd)</th>
                         </tr>
                         </thead>
@@ -59,6 +61,8 @@
                                     <td> <img width="100px"class="img-thumbnail" src="../assets/images/<?= $addteam['photo'] ?>" alt=""> </td>
                                     <td> <img width="100px"class="img-thumbnail" src="../assets/images/certificate/<?= $addteam['certificate'] ?>" alt=""> </td>
                                     <td> <img width="100px"class="img-thumbnail" src="../assets/images/proof/<?= $addteam['proof'] ?>" alt=""> </td>
+                                    <td> <img width="100px"class="img-thumbnail" src="../assets/images/proof/<?= $addteam['media'] ?>" alt=""> </td>
+                                    <td> <img width="100px"class="img-thumbnail" src="../assets/images/proof/<?= $addteam['video'] ?>" alt=""> </td>
                                     <td><?= $addteam['from_date'] ?></td>
                                 </tr>
                             <?php $i+=1; endforeach ?>
