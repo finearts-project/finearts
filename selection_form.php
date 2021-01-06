@@ -2,6 +2,7 @@
     header("Location: index.php");
 }?><?php include("form_header.php")?>
 <?php include("comman/function.php")?>
+<?php $events = get_events();?>
 <div class="container-fluid" style="padding:50px">
     <div class="container">
         <!-- <div class="row justify-content-center"> -->
@@ -22,12 +23,45 @@
                     <div class="form-group">
                         <label>Event Name</label>
                         <select name="event_name" class="form-control is-invalid" id="event_name">
+                            <option value="">[select]</option>
+                            <?php foreach($events as $event) {?>
+                            <option value="<?php echo $event['event_id']?>"><?php echo $event['name']?></option>
+                            <?php }?>
                         </select>
                         <span id="event_name_err" style="color:red"></span>
                     </div>
                 </div>
                 <div class="col-sm-3">
                 </div>
+
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="row  justify-content-center">
+                        <div class="col-sm-12" id="radio-section" style="display:none">
+                            <div class="form-group">
+                                <label for=""> Event Category</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="cat" value="solo">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Solo
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="cat" value="group">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Group
+                                    </label>
+                                </div>
+                                <span id="cat_err" style="color:red"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                </div>
+
 
                 <div class="col-sm-3">
                 </div>
@@ -131,8 +165,8 @@
         var event_id = localStorage.getItem('eventId');
         var sub_event = localStorage.getItem('subEventName');
         var sub_event_id = localStorage.getItem('subEventId');
-        $("#event_name").html("<option value=" + event_id + ">" + event_name + "</option>");
-        $("#sub_event_name").html("<option value=" + sub_event_id + ">" + sub_event + "</option>");
+        //$("#event_name").html("<option value=" + event_id + ">" + event_name + "</option>");
+        //$("#sub_event_name").html("<option value=" + sub_event_id + ">" + sub_event + "</option>");
 
 
     })
@@ -186,7 +220,7 @@
         template += ' <div class="form-group">';
         template += ' <label for="exampleInputPassword1">year</label>';
         template += '  <select name="year_' + id_valid + '" class="form-control is-invalid" id="year_' + id_valid +
-        '">';
+            '">';
         template +=
             '  <option value="">[No Sub Events]</option> <option value="1">I</option> <option value="2">II</option> <option value="3">III</option>';
         template += ' </select>';
@@ -213,7 +247,25 @@
         var course = [];
         var year = [];
         var valid = localStorage.getItem('id_valid');
-
+        if ($('#event_name').val() == '') {
+            $('#event_name_err').text('Please enter event name');
+            $('#event_name').css('border-color', 'red');
+            $("#event_name").focus();
+            return false;
+        } else {
+            $('#event_name').css('border-color', 'green');
+            $('#event_name_err').text('');
+            valid++;
+        }
+        var cate = $("input[name='cat']:checked").val();
+        if (cate == undefined) {
+            $('#cat_err').text('Please choose category');
+            $("input[name='cat']").focus();
+            return false;
+        } else {
+            $('#cat_err').text('');
+            valid++;
+        }
         if (document.getElementById("event_date").value == '') {
             document.getElementById("event_date_err").innerHTML = 'Please enter the Date';
             document.getElementById("event_date").focus();
@@ -355,5 +407,55 @@
             $(this).removeClass('is-valid');
         }
 
+    })
+    </script>
+    <script>
+    $("#event_name").click(function() {
+        var data = new FormData();
+        var cat = $("input[name='cat']:checked").val();
+        var event_name = $("#event_name").val();
+        if (event_name != '') {
+            $("#radio-section").show();
+            data.append("id", $("#event_name").val());
+            data.append("cat", cat);
+            if (cat != 'undefined') {
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: 'comman/api.php?action=get_sub_event',
+                    data: data,
+                    cache: false,
+                    processData: false, // important
+                    contentType: false,
+                    success: function(result) {
+                        $("#sub_event_name").html(result)
+                    }
+                });
+            }
+        } else {
+            $("#radio-section").hide();
+        }
+    })
+
+    $("input[name='cat']").click(function() {
+        var data = new FormData();
+        var cat = $("input[name='cat']:checked").val();
+        var event_name = $("#event_name").val();
+        if (event_name != '') {
+            data.append("id", $("#event_name").val());
+            data.append("cat", cat);
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: 'comman/api.php?action=get_sub_event',
+                data: data,
+                cache: false,
+                processData: false, // important
+                contentType: false,
+                success: function(result) {
+                    $("#sub_event_name").html(result)
+                }
+            });
+        }
     })
     </script>
