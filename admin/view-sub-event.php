@@ -35,7 +35,7 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>Sino</th>
+                            <th>Sno</th>
                             <th>Sub Event Name</th>
                             <th>Main Event Name</th>
                             
