@@ -255,7 +255,6 @@
         } else {
             $('#event_name').css('border-color', 'green');
             $('#event_name_err').text('');
-            valid++;
         }
         var cate = $("input[name='cat']:checked").val();
         if (cate == undefined) {
@@ -264,7 +263,6 @@
             return false;
         } else {
             $('#cat_err').text('');
-            valid++;
         }
         if (document.getElementById("event_date").value == '') {
             document.getElementById("event_date_err").innerHTML = 'Please enter the Date';
@@ -336,7 +334,7 @@
             contentType: false,
             success: function(result) {
                 if (result) {
-                    //window.location.href = "activity_form.php";
+                    window.location.href = "activity_form.php";
                 } else {
                     $("#login_err").html("Email or Password is Incorrect");
                 }

@@ -385,3 +385,47 @@ $('#level,#coordinator_name,#event_name,#sub_event_name,#from,#to').change(funct
 
 })
 </script>
+
+<script>
+$("#from").change(function() {
+    var data = new FormData();
+    var cat = $("input[name='cat']:checked").val();
+    var event_name = $("#event_name").val();
+    if (event_name != '') {
+        $("#radio-section").show();
+        data.append("id", $("#event_name").val());
+        data.append("cat", cat);
+        if (cat != 'undefined') {
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: 'comman/api.php?action=get_sub_event',
+                data: data,
+                cache: false,
+                processData: false, // important
+                contentType: false,
+                success: function(result) {
+                    $("#sub_event_name").html(result)
+                }
+            });
+        }
+        data.append("date", $("#from").val());
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: 'comman/api.php?action=get_student_list',
+            data: data,
+            cache: false,
+            processData: false, // important
+            contentType: false,
+            success: function(result) {
+                $("#Student_list").html(result)
+            }
+        });
+
+    } else {
+        $("#radio-section").hide();
+    }
+});
+
+</script>

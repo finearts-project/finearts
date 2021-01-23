@@ -91,6 +91,19 @@ function get_sub_evnts(){
     mysqli_close($link);
 }
 
+function get_report(){
+    extract($GLOBALS);
+    $date = $_POST['date'];
+    $query = "SELECT * FROM `selection_form` WHERE `event_date` = '$date' AND `delete_status` = 'N'" ;
+    $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
+    $arr = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $arr[] = $row;
+    }
+    return($arr);
+    mysqli_close($link);
+}
+
 $action = '';
 if (isset($_REQUEST['action'])) {
     $action = $_REQUEST['action'];

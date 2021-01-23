@@ -202,6 +202,25 @@
 
                         </li>
 
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-cubes"></i>
+                                <p>
+                                    Report Generate
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="report.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Get Report</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
                         <li class="nav-item has-treeview">
                             <a href="javascript:void(0)" id="logout" class="nav-link">
                                 <i class="nav-icon fa fa fa-sign-out""></i>
