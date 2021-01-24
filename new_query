@@ -1,0 +1,7 @@
+ALTER TABLE `selection_form` ADD `ExtActPrincipalApprovalStatus` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `year`;
+
+ALTER TABLE `selection_form` ADD `ExtActPrincipalRemarks` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `ExtActPrincipalApprovalStatus`;
+
+ALTER TABLE `activity_form` ADD `ExtActPrincipalApprovalStatus` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `cat`;
+
+ALTER TABLE `activity_form` ADD `ExtActPrincipalRemarks` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `ExtActPrincipalApprovalStatus`;

@@ -147,6 +147,19 @@ $event_levels = get_event_level();?>
                     </table>
                 </div>
                 </div>
+                <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Principal Approval</label>
+                        <select name="principal_approval" class="form-control is-invalid" id="principal_approval">
+                            <option value="">[No Sub Events]</option>
+                            <option value="Y">Approval</option>
+                            <option value="N">Not Approval</option>
+                        </select>
+                        <span id="sub_event_name_err" style="color:red"></span>
+                    </div>
+                </div>
+                </div>
 
             <!-- </div> -->
             <!-- <div class="row justify-content-center"> -->
@@ -343,6 +356,7 @@ function save_full_list() {
         data.append("from", $("#from").val());
         data.append("to", $("#to").val());
         data.append("coordinator_name", $("#coordinator_name").val());
+        data.append("principal_approval", $("#principal_approval").val());
         data.append("org_by", $("#org_by").val());
         data.append("cat", cate);
         $.ajax({

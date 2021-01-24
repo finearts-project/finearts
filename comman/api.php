@@ -138,6 +138,7 @@ else if($action=="save_full_list"){
     $sub_event_id = $_POST['sub_event_id'];
     $sub_event_name = $_POST['sub_event_name'];
     $programe_name = $_POST['programe_name'];
+    $principal_approval = $_POST['principal_approval'];
     $level = $_POST['level'];
     $venue = $_POST['venue'];
     $from = $_POST['from'];
@@ -155,9 +156,9 @@ else if($action=="save_full_list"){
         $std_name = $value["name"];
         $std_reg_no = $value["register_no"];
 
-    $query = "INSERT INTO `activity_form` (`event_id`, `event_name`, `sub_event_id`, `sub_event_name`, `programe_name`, `level`, `venue`, `from_date`, `to_date`, `coordinator_name`, `org_by`, `cat`,`student_reg_no`,`student_name`) 
+    $query = "INSERT INTO `activity_form` (`event_id`, `event_name`, `sub_event_id`, `sub_event_name`, `programe_name`, `level`, `venue`, `from_date`, `to_date`, `coordinator_name`, `org_by`, `cat`,`student_reg_no`,`student_name`,`ExtActPrincipalApprovalStatus`) 
                 VALUES ( '$event_id', '$event_name', '$sub_event_id', '$sub_event_name', 
-                '$programe_name', '$level', '$venue', '$from', '$to', '$coordinator_name', '$org_by', '$cat','$std_name','$std_reg_no');";
+                '$programe_name', '$level', '$venue', '$from', '$to', '$coordinator_name', '$org_by', '$cat','$std_name','$std_reg_no','$principal_approval');";
     $result = mysqli_query($link, $query) or die('Error in Query.' . mysqli_error($link));
     }
     echo $result;
