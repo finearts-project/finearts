@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 06, 2021 at 08:59 PM
+-- Generation Time: Jan 24, 2021 at 09:50 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.4.13
 
@@ -41,8 +41,20 @@ CREATE TABLE `activity_form` (
   `to_date` date NOT NULL,
   `coordinator_name` varchar(200) NOT NULL,
   `org_by` varchar(200) NOT NULL,
-  `cat` varchar(10) NOT NULL
+  `cat` varchar(10) NOT NULL,
+  `ExtActPrincipalApprovalStatus` enum('Y','N') NOT NULL DEFAULT 'N',
+  `ExtActPrincipalRemarks` enum('Y','N') NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `activity_form`
+--
+
+INSERT INTO `activity_form` (`id`, `event_id`, `event_name`, `sub_event_id`, `student_reg_no`, `student_name`, `sub_event_name`, `programe_name`, `level`, `venue`, `from_date`, `to_date`, `coordinator_name`, `org_by`, `cat`, `ExtActPrincipalApprovalStatus`, `ExtActPrincipalRemarks`) VALUES
+(1, '1', 'vocal', '3', 'Cody Avery', 'Nisi magni nostrum e', 'demo23', 'Melanie White', '1', 'Corporis irure iste ', '2021-01-01', '2021-01-01', '2', 'Id nemo et voluptati', 'solo', 'N', 'N'),
+(2, '1', 'vocal', '3', 'Cody Avery', 'Nisi magni nostrum e', 'demo23', 'Melanie White', '1', 'Corporis irure iste ', '2021-01-01', '2021-01-01', '2', 'Id nemo et voluptati', 'solo', 'N', 'N'),
+(3, '1', 'vocal', '3', 'Cody Avery', 'Nisi magni nostrum e', 'demo23', 'Acton Gould', '1', 'Consequatur Do a to', '2021-01-01', '2021-01-28', '2', 'Quia ad libero dicta', 'solo', 'Y', 'N'),
+(4, '1', 'vocal', '3', 'Cody Avery', 'Nisi magni nostrum e', 'demo23', 'Acton Gould', '1', 'Consequatur Do a to', '2021-01-01', '2021-01-28', '2', 'Quia ad libero dicta', 'solo', 'Y', 'N');
 
 -- --------------------------------------------------------
 
@@ -91,7 +103,7 @@ CREATE TABLE `coordinators` (
 
 INSERT INTO `coordinators` (`id`, `coordinator_reg_no`, `name`, `designation`, `department`, `shift`, `delete_status`, `create_date`) VALUES
 (1, ' demo', ' demo', ' zdf', '', '', 'Y', '2020-12-25 00:00:00'),
-(2, ' ', ' Pradeep', ' Bord Member', 'IT', 'Day', 'N', '2121-01-06 00:00:00');
+(2, ' ', ' Pradeep', ' Board Member', 'IT', 'Day', 'N', '2121-01-06 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -259,6 +271,8 @@ CREATE TABLE `selection_form` (
   `name` varchar(100) NOT NULL,
   `course` varchar(50) NOT NULL,
   `year` varchar(50) NOT NULL,
+  `ExtActPrincipalApprovalStatus` enum('Y','N') NOT NULL DEFAULT 'N',
+  `ExtActPrincipalRemarks` enum('Y','N') NOT NULL DEFAULT 'N',
   `event_date` date DEFAULT NULL,
   `create_date` datetime NOT NULL,
   `delete_status` enum('Y','N') NOT NULL DEFAULT 'N'
@@ -268,22 +282,25 @@ CREATE TABLE `selection_form` (
 -- Dumping data for table `selection_form`
 --
 
-INSERT INTO `selection_form` (`id`, `event_id`, `sub_event_id`, `event_name`, `sub_event_name`, `register_no`, `name`, `course`, `year`, `event_date`, `create_date`, `delete_status`) VALUES
-(1, '1', 'null', 'vocal', '', 'dfh', 'dfgh', 'ug', '1', '2020-12-26', '2020-12-26 00:00:00', 'N'),
-(2, '1', 'null', 'vocal', '', 'test', 'activity_form.php', 'ug', '1', '2020-12-26', '2020-12-26 00:00:00', 'N'),
-(3, '1', 'null', 'vocal', '', 'test', 'asdasd', 'pg', '2', '2020-12-26', '2020-12-26 00:00:00', 'N'),
-(4, '1', 'null', 'vocal', '', 'gfjh', 'ghj', 'ug', '1', '2020-12-26', '2020-12-26 00:00:00', 'N'),
-(5, '1', '3', 'vocal', 'demo23', 'a', 'dfgh', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
-(6, '1', '3', 'vocal', 'demo23', 'activity_form.php', 'activity_form.php', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
-(7, '1', '3', 'vocal', 'demo23', 'Z', 'zxc', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
-(8, '1', '3', 'vocal', 'demo23', 'a', 'dfgh', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
-(9, '1', '3', 'vocal', 'demo23', 'activity_form.php', 'activity_form.php', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
-(10, '1', '3', 'vocal', 'demo23', 'Z', 'zxc', 'ug', '1', '2020-12-28', '2020-12-28 00:00:00', 'N'),
-(11, '1', '3', 'vocal', 'demo23', 'a', 'ï¸ jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
-(12, '1', '3', 'vocal', 'demo23', 'a', 'ï¸ jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
-(13, '1', '3', 'vocal', 'demo23', 'a', 'jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
-(14, '3', '3', 'Instrumantal', 'demo23', 'a', 'jhb', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N'),
-(15, '1', '1', 'vocal', 'demo', 'test', 'test', 'ug', '1', '2021-01-06', '2121-01-06 00:00:00', 'N');
+INSERT INTO `selection_form` (`id`, `event_id`, `sub_event_id`, `event_name`, `sub_event_name`, `register_no`, `name`, `course`, `year`, `ExtActPrincipalApprovalStatus`, `ExtActPrincipalRemarks`, `event_date`, `create_date`, `delete_status`) VALUES
+(1, '1', 'null', 'vocal', '', 'dfh', 'dfgh', 'ug', '1', 'N', 'N', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(2, '1', 'null', 'vocal', '', 'test', 'activity_form.php', 'ug', '1', 'N', 'N', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(3, '1', 'null', 'vocal', '', 'test', 'asdasd', 'pg', '2', 'N', 'N', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(4, '1', 'null', 'vocal', '', 'gfjh', 'ghj', 'ug', '1', 'N', 'N', '2020-12-26', '2020-12-26 00:00:00', 'N'),
+(5, '1', '3', 'vocal', 'demo23', 'a', 'dfgh', 'ug', '1', 'N', 'N', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(6, '1', '3', 'vocal', 'demo23', 'activity_form.php', 'activity_form.php', 'ug', '1', 'N', 'N', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(7, '1', '3', 'vocal', 'demo23', 'Z', 'zxc', 'ug', '1', 'N', 'N', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(8, '1', '3', 'vocal', 'demo23', 'a', 'dfgh', 'ug', '1', 'N', 'N', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(9, '1', '3', 'vocal', 'demo23', 'activity_form.php', 'activity_form.php', 'ug', '1', 'N', 'N', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(10, '1', '3', 'vocal', 'demo23', 'Z', 'zxc', 'ug', '1', 'N', 'N', '2020-12-28', '2020-12-28 00:00:00', 'N'),
+(11, '1', '3', 'vocal', 'demo23', 'a', 'ï¸ jhb', 'ug', '1', 'N', 'N', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(12, '1', '3', 'vocal', 'demo23', 'a', 'ï¸ jhb', 'ug', '1', 'N', 'N', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(13, '1', '3', 'vocal', 'demo23', 'a', 'jhb', 'ug', '1', 'N', 'N', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(14, '3', '3', 'Instrumantal', 'demo23', 'a', 'jhb', 'ug', '1', 'N', 'N', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(15, '1', '1', 'vocal', 'demo', 'test', 'test', 'ug', '1', 'N', 'N', '2021-01-06', '2121-01-06 00:00:00', 'N'),
+(16, '3', 'null', 'Instrumantal', '', 'Possimus qui volupt', 'Dillon Ware', 'pg', '1', 'N', 'N', '2021-01-28', '2121-01-20 00:00:00', 'N'),
+(17, '1', 'null', 'vocal', '', 'Nisi magni nostrum e', 'Cody Avery', 'ug', '1', 'N', 'N', '2021-01-01', '2121-01-23 00:00:00', 'N'),
+(18, '1', '1', 'vocal', 'demo', 'Nisi magni nostrum e', 'Cody Avery', 'ug', '1', 'N', 'N', '2021-01-01', '2121-01-23 00:00:00', 'N');
 
 -- --------------------------------------------------------
 
@@ -376,7 +393,7 @@ ALTER TABLE `sub_events`
 -- AUTO_INCREMENT for table `activity_form`
 --
 ALTER TABLE `activity_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `admin`
 --
@@ -411,7 +428,7 @@ ALTER TABLE `post_activity`
 -- AUTO_INCREMENT for table `selection_form`
 --
 ALTER TABLE `selection_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `sub_events`
 --
